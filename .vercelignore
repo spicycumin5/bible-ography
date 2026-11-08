@@ -1,0 +1,3 @@
+# Build and check scripts aren't part of the website
+tools/
+README.md
