@@ -1,0 +1,11 @@
+# STEPBible source texts (~100 MB). Re-download with the steps in README.md, then run tools/build-words.js.
+tools/sources/
+
+# Vercel
+.vercel/
+
+# OS / editor clutter
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
