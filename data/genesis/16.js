@@ -1,0 +1,45 @@
+BIBLE.chapter("genesis", 16, {
+  title: "Hagar and Ishmael",
+  keyVerse: "16:13",
+  summary: "Ten years in Canaan and still no child. Sarai proposes a solution: 'Go in to my servant; it may be that I shall obtain children by her.' Abram listens to her. Her Egyptian servant Hagar conceives and begins to look on Sarai with contempt. Sarai blames Abram, he hands responsibility back to her, and Sarai treats Hagar so harshly that she runs away.\n\nBy a spring on the road to Shur, the angel of the LORD finds Hagar: 'Where have you come from and where are you going?' He tells her to return and submit, but promises that her offspring will be too many to count. Her son will be called Ishmael, 'God hears', 'because the LORD has listened to your affliction'. Hagar names the LORD who spoke to her 'You are a God of seeing', and the well is called Beer-lahai-roi. Abram is 86 when Ishmael is born.",
+  outline: [
+    { ref: "16:1-6", text: "Sarai's plan; Hagar's pregnancy; conflict and flight" },
+    { ref: "16:7-12", text: "The angel of the LORD finds Hagar; promise about Ishmael" },
+    { ref: "16:13-16", text: "'The God who sees me'; Ishmael's birth" },
+  ],
+  era: "patriarchs",
+  date: { traditional: "c. 2081–2080 BC (Abram 85–86)", scholarly: "Middle Bronze Age", year: -2080 },
+  setting: "Hagar flees south from Hebron toward Egypt, her homeland, along the 'way to Shur' across the northern Sinai. The angel meets her at a spring 'between Kadesh and Bered'.",
+  places: [
+    { id: "mamre", role: "Abram's household", primary: true },
+    { id: "shur", role: "Hagar heads along the road to Shur, toward Egypt" },
+    { id: "beer-lahai-roi", role: "The well where God meets Hagar" },
+    { id: "kadesh" }, { id: "egypt", role: "Hagar's homeland" },
+  ],
+  journeys: [{ label: "Hagar's flight", path: ["mamre", "beer-lahai-roi"], ref: "16:6-7" }],
+  people: [
+    { id: "sarah", note: "Called Sarai; tries to secure the promise by custom, then resents the result." },
+    { id: "abraham", note: "Called Abram; goes along with the plan and avoids responsibility." },
+    { id: "hagar", note: "An enslaved Egyptian woman, used, mistreated, and then personally met by God." },
+    { id: "ishmael", note: "Born to Hagar and Abram; named by God himself." },
+  ],
+  lineage: { title: "Abram's two sons (so far)", root: "abraham", include: ["ishmael"], highlight: ["ishmael"],
+    note: "Hagar is Ishmael's mother. Isaac, the son of promise, won't be born for another fourteen years." },
+  context: [
+    { title: "Surrogate motherhood in the ancient world", body: "Marriage contracts from Nuzi and the Code of Hammurabi (§146) show that a barren wife could give her servant to her husband, and the child would count as the wife's. Sarai's plan was legal and culturally normal. Genesis presents it as a failure of faith all the same, and its echo of Genesis 3 is deliberate: Sarai 'took' and 'gave to her husband', and he 'listened to the voice of his wife'." },
+    { title: "The angel of the LORD", body: "This is the first appearance of 'the angel of the LORD'. He speaks as God, makes promises only God can make ('I will surely multiply your offspring') and Hagar identifies him as the LORD (16:13). Many Christian interpreters have seen in these appearances a preview of the Son of God before his incarnation." },
+  ],
+  gospel: [
+    { type: "theme", title: "The God who sees the outcast", ot: "16:13", nt: ["Luke 19:10", "John 4:7-26"],
+      body: "The first person in Scripture to give God a name is a pregnant, runaway, foreign slave woman. God seeks her before she seeks him. Jesus does the same with the Samaritan woman at the well: an outsider whom he seeks out, sees fully, and speaks to." },
+    { type: "type", title: "Two sons, two covenants", ot: "16:15", nt: ["Gal 4:21-31"],
+      body: "Paul uses Hagar and Sarah as an allegory. Ishmael, 'born according to the flesh' through human scheming, stands for slavery to the law. Isaac, born 'through promise' by God's power, stands for the freedom of grace. Christians are 'children of promise, like Isaac'." },
+  ],
+  themes: ["impatience", "taking control", "mistreatment", "God sees", "God hears", "grace to outsiders"],
+  questions: [
+    "Sarai and Abram tried to 'help' God keep his promise. Where are you tempted to force outcomes instead of waiting?",
+    "Hagar was invisible to the people around her, but not to God. Who around you might feel unseen?",
+    "What does it mean to you personally that the LORD is 'a God who sees'?",
+  ],
+  crossrefs: ["Gal 4:21-31", "Gen 21:8-21", "Ps 139:1-12"],
+});

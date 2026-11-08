@@ -1,0 +1,48 @@
+BIBLE.chapter("genesis", 26, {
+  title: "Isaac, the wells and the promise",
+  keyVerse: "26:24",
+  summary: "Another famine. Isaac heads toward Gerar, and the LORD appears to him: don't go down to Egypt; stay in this land and I will be with you and bless you. God confirms to Isaac the oath he swore to Abraham (land, offspring like the stars, blessing for all nations) 'because Abraham obeyed my voice'.\n\nIn Gerar Isaac repeats his father's lie: 'She is my sister.' King Abimelech discovers the truth when he sees Isaac 'laughing' with (caressing) Rebekah, and he protects them. Isaac sows crops and reaps a hundredfold. He grows so rich that the Philistines envy him and stop up his father's wells. He moves on, re-digging wells; the herdsmen of Gerar quarrel over Esek ('contention') and Sitnah ('enmity'), but at Rehoboth ('broad places') there is room. At Beersheba the LORD appears again: 'Fear not, for I am with you.' Abimelech comes to make a covenant of peace. The chapter ends with Esau marrying two Hittite women, who bring bitterness to Isaac and Rebekah.",
+  outline: [
+    { ref: "26:1-6", text: "Famine; God confirms the Abrahamic promise to Isaac" },
+    { ref: "26:7-11", text: "Isaac's lie about Rebekah in Gerar" },
+    { ref: "26:12-22", text: "Prosperity, envy, and the wells" },
+    { ref: "26:23-33", text: "God appears at Beersheba; treaty with Abimelech" },
+    { ref: "26:34-35", text: "Esau's Hittite wives" },
+  ],
+  era: "patriarchs",
+  date: { traditional: "Between c. 2006 and 1966 BC; Esau marries at 40 (c. 1966 BC)", scholarly: "Middle Bronze Age", year: -1966 },
+  places: [
+    { id: "gerar", role: "Isaac settles here during the famine", primary: true },
+    { id: "egypt", role: "God forbids Isaac to go down" },
+    { id: "rehoboth", role: "'Now the LORD has made room for us'" },
+    { id: "beersheba", role: "God appears to Isaac; he builds an altar and digs a well" },
+  ],
+  journeys: [{ label: "Isaac's moves", path: ["beer-lahai-roi", "gerar", "rehoboth", "beersheba"], ref: "26:1-23" }],
+  people: [
+    { id: "isaac", note: "Inherits his father's promise, and his father's fear and deception; a patient peacemaker over the wells." },
+    { id: "rebekah", note: "Passed off as Isaac's sister." },
+    { id: "abimelech", note: "King of Gerar (perhaps a successor of Abraham's Abimelech); first protects, then expels, then makes peace." },
+    { id: "phicol" },
+    { id: "esau", note: "Marries Judith and Basemath, Hittite women." },
+    { id: "judith" }, { id: "adah-esau" },
+  ],
+  context: [
+    { title: "Philistines in Genesis?", body: "The great wave of Philistine settlement on the coast came around 1200 BC, so some see the term here as updating an older name. Others note that Aegean-linked groups traded and settled along the Canaanite coast much earlier, and that Abimelech's people differ in culture from the later Philistine city-states." },
+    { title: "Water rights", body: "Stopping up a rival's wells was a hostile act. It declared that the land was not his. Isaac's repeated choice to move on rather than fight is striking. So is the fact that he re-digs Abraham's wells and gives them his father's names, reclaiming his inheritance." },
+  ],
+  gospel: [
+    { type: "promise", title: "The promise passes to Isaac", ot: "26:3-4", nt: ["Gal 3:16", "Acts 3:25"],
+      body: "God repeats to Isaac all three strands of the promise to Abraham, including 'in your offspring all the nations of the earth shall be blessed'. The promise doesn't depend on any one generation's strength. It passes down until it reaches Christ." },
+    { type: "theme", title: "I am with you", ot: "26:24", nt: ["Matt 1:23", "Matt 28:20"],
+      body: "The promise of God's presence ('I am with you') runs through the patriarchs' lives. It is fulfilled in Jesus, Immanuel, 'God with us', who promises his disciples, 'I am with you always, to the end of the age.'" },
+    { type: "theme", title: "Blessed are the meek", ot: "26:22", nt: ["Matt 5:5", "Rom 12:18"],
+      body: "Isaac yields twice and finds 'broad places' the third time. Jesus says the meek will inherit the earth. In the end, God made room for the one who didn't fight for his rights." },
+  ],
+  themes: ["God's presence", "covenant continuity", "fear", "prosperity and envy", "meekness", "peace"],
+  questions: [
+    "Isaac copied his father's worst moment. Which patterns, good or bad, have you inherited?",
+    "Isaac moved on rather than fight over wells. When is it right to yield, and when is it right to stand firm?",
+    "God said 'I am with you' to Isaac in a season of hostility. Where do you need to hear that today?",
+  ],
+  crossrefs: ["Gen 12:10-20", "Gen 20", "Heb 11:20", "Matt 5:5", "Ps 4:1"],
+});

@@ -1,0 +1,42 @@
+BIBLE.chapter("genesis", 3, {
+  title: "The fall",
+  keyVerse: "3:15",
+  summary: "The serpent questions God's word ('Did God actually say…?') and then denies it ('You will not surely die'). The woman sees that the fruit is desirable, takes and eats, and gives some to her husband, who was with her. Their eyes are opened, but what they see is their own nakedness, and they hide from God among the trees.\n\nGod comes looking: 'Where are you?' The man blames the woman (and God, who gave her); the woman blames the serpent. God curses the serpent and announces pain in childbearing, conflict in marriage and toil in work, ending in a return to dust. Yet in the middle of judgement comes the first promise of the gospel: the woman's offspring will crush the serpent's head. God clothes them with garments of skin and sends them out of the garden, with cherubim guarding the way to the tree of life.",
+  outline: [
+    { ref: "3:1-7", text: "The temptation and the first sin" },
+    { ref: "3:8-13", text: "Hiding from God; excuses and blame" },
+    { ref: "3:14-15", text: "The serpent cursed; the first gospel promise" },
+    { ref: "3:16-19", text: "Consequences for the woman and the man" },
+    { ref: "3:20-24", text: "Garments of skin; exile from Eden" },
+  ],
+  era: "primeval",
+  date: { traditional: "Undated; early in Adam's life", scholarly: "Undated", am: 0 },
+  setting: "The garden in Eden. The chapter ends with the couple driven east, away from God's presence. Eastward movement becomes a pattern of exile in Genesis (4:16; 11:2; 13:11).",
+  places: [{ id: "eden", role: "The garden from which Adam and Eve are expelled", primary: true }, { id: "tigris" }, { id: "euphrates" }],
+  people: [
+    { id: "eve", note: "Deceived by the serpent; named 'Eve' by Adam after the promise of offspring." },
+    { id: "adam", note: "Present with his wife; eats, hides, blames, and is sentenced to toil and death." },
+  ],
+  context: [
+    { title: "The serpent", body: "Serpents were symbols of wisdom, life and chaos across the ancient Near East, and the Egyptian pharaoh's crown carried a cobra. Genesis presents this one as a 'crafty' creature who opposes God. Later Scripture identifies him as 'that ancient serpent, who is called the devil and Satan' (Rev 12:9)." },
+    { title: "What changed", body: "Every relationship in chapters 1–2 breaks. Between people and God there is fear and hiding. Between husband and wife, blame, and a struggle for control (3:16; compare the same wording in 4:7). Between humans and the ground, thorns and sweat. Within the person, shame. Death, threatened in 2:17, begins at once: exile from the tree of life." },
+  ],
+  gospel: [
+    { type: "promise", title: "The serpent-crusher", ot: "3:15", nt: ["Gal 4:4", "Heb 2:14-15", "1 John 3:8", "Rom 16:20"],
+      body: "Christians have long called this verse the protoevangelium, the 'first gospel'. One born of a woman will be struck on the heel but will crush the serpent's head. Jesus, 'born of woman', destroyed the one who has the power of death through his own death." },
+    { type: "type", title: "Covered by a sacrifice", ot: "3:21", nt: ["Rom 13:14", "Gal 3:27", "Rev 19:8"],
+      body: "The couple's fig leaves can't cover their shame. God himself clothes them with skins, which implies the first death. The gospel speaks of being clothed with Christ, covered by his righteousness rather than our own efforts." },
+    { type: "fulfillment", title: "One man's disobedience, one man's obedience", ot: "3:6", nt: ["Rom 5:12-19", "1 Cor 15:21-22"],
+      body: "Paul reads human history through two representatives: in Adam all die; in Christ all will be made alive. Where Adam grasped at a tree and fell, Christ obeyed in a garden (Gethsemane) and on a tree, and reversed the curse." },
+    { type: "fulfillment", title: "The way back to the tree of life", ot: "3:24", nt: ["Rev 22:1-3", "Rev 22:14", "Heb 10:19-20"],
+      body: "Cherubim bar the way to the tree of life, as cherubim later woven into the temple curtain barred the way to God's presence. At Jesus' death that curtain tore. Revelation ends with the tree of life open again and 'no longer will there be anything accursed'." },
+  ],
+  themes: ["temptation", "sin", "shame", "blame", "judgement", "grace", "promise"],
+  questions: [
+    "The serpent's strategy is to make God seem stingy and his word doubtful. Where do you hear that voice today?",
+    "Notice God's first words to sinners: a question, 'Where are you?'. What does that reveal about him?",
+    "Adam and Eve hide and shift blame. What does honest confession look like instead?",
+    "How does knowing that God promised a rescuer on the very day of the fall shape your view of his grace?",
+  ],
+  crossrefs: ["Rom 5:12-21", "2 Cor 11:3", "1 Tim 2:14", "Rom 8:20-22", "Rev 12:9", "Rev 22:3"],
+});

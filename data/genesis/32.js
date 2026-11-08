@@ -1,0 +1,46 @@
+BIBLE.chapter("genesis", 32, {
+  title: "Jacob wrestles with God",
+  keyVerse: "32:28",
+  summary: "Angels of God meet Jacob on the road, and he names the place Mahanaim, 'two camps'. Then the news he dreaded: Esau is coming with four hundred men. Jacob is greatly afraid. He divides his people into two camps and prays the first real prayer recorded from his lips: 'I am not worthy of the least of all the deeds of steadfast love… Please deliver me from the hand of my brother.' He sends wave after wave of livestock ahead as gifts to appease Esau.\n\nThat night, alone by the ford of the Jabbok, 'a man wrestled with him until the breaking of the day'. When the man cannot prevail, he touches Jacob's hip and puts it out of joint, but Jacob clings on: 'I will not let you go unless you bless me.' 'What is your name?' 'Jacob' ('heel-grabber'). 'Your name shall no longer be called Jacob, but Israel, for you have striven with God and with men, and have prevailed.' Jacob names the place Peniel: 'I have seen God face to face, and yet my life has been delivered.' He limps away into the sunrise.",
+  outline: [
+    { ref: "32:1-2", text: "Angels at Mahanaim" },
+    { ref: "32:3-8", text: "News of Esau's approach; Jacob divides his camp" },
+    { ref: "32:9-12", text: "Jacob's prayer" },
+    { ref: "32:13-21", text: "Gifts sent ahead to Esau" },
+    { ref: "32:22-32", text: "Wrestling at the Jabbok; renamed Israel" },
+  ],
+  era: "patriarchs",
+  date: { traditional: "c. 1909 BC", scholarly: "Middle Bronze Age", year: -1909 },
+  setting: "The Jabbok (modern Zarqa) cuts a steep gorge through Gilead down to the Jordan. Jacob is on the very edge of the promised land; Esau approaches from Seir in the south.",
+  places: [
+    { id: "mahanaim", role: "'Two camps': God's camp of angels and Jacob's camp" },
+    { id: "jabbok", role: "The ford Jacob's family crosses at night" },
+    { id: "peniel", role: "Where Jacob wrestles and is renamed", primary: true },
+    { id: "edom", role: "Esau is coming from Seir" },
+  ],
+  journeys: [{ label: "Jacob approaches the Jordan", path: ["mizpah-gilead", "mahanaim", "peniel"], ref: "32:1-22" }],
+  people: [
+    { id: "jacob", note: "Terrified of Esau; prays, plans, wrestles, is wounded and blessed, and renamed Israel." },
+    { id: "esau", note: "Approaching with 400 men; his intentions are unknown." },
+  ],
+  context: [
+    { title: "Who was the wrestler?", body: "The text calls him 'a man'. Hosea calls him an angel (Hos 12:4). Jacob concludes he has seen God face to face. Many Christian interpreters have understood him as a pre-incarnate appearance of the Son of God, God in human form." },
+    { title: "A name that tells a story", body: "Israel probably means 'God strives' or 'he strives with God'. Jacob's old name was his old way of life: grasping, scheming, getting ahead. The new name marks the man who has learned that blessing comes from clinging to God, not out-manoeuvring people. The nation would carry this name." },
+    { title: "The limp", body: "Israelites didn't eat the sinew of the hip 'to this day' in memory of the event (32:32). Jacob walks away blessed but limping. His strength is broken and his dependence is permanent." },
+  ],
+  gospel: [
+    { type: "theme", title: "Strength made perfect in weakness", ot: "32:25", nt: ["2 Cor 12:9-10"],
+      body: "Jacob prevails not by his strength but by clinging to God after his strength is broken. Paul learns the same thing: 'My grace is sufficient for you, for my power is made perfect in weakness.'" },
+    { type: "theme", title: "Seeing God's face and living", ot: "32:30", nt: ["John 1:18", "2 Cor 4:6", "John 14:9"],
+      body: "Jacob is amazed to survive seeing God face to face. In Jesus we see 'the glory of God in the face of Jesus Christ'. 'Whoever has seen me has seen the Father.'" },
+    { type: "theme", title: "A humble prayer", ot: "32:10", nt: ["Luke 18:13-14", "Heb 4:16"],
+      body: "Jacob's prayer begins 'I am not worthy'. It contrasts sharply with his earlier bargaining. That posture is the doorway to grace, as in the tax collector's prayer that went home justified." },
+  ],
+  themes: ["fear", "prayer", "wrestling with God", "brokenness", "new identity", "blessing"],
+  questions: [
+    "Jacob's prayer mixes fear, humility and God's promises. How could you pray that way in your fears?",
+    "Where have you 'wrestled' with God? What did it change in you?",
+    "God blessed Jacob and left him limping. How have your wounds kept you dependent on God?",
+  ],
+  crossrefs: ["Hos 12:3-5", "2 Cor 12:7-10", "Luke 18:1-8"],
+});

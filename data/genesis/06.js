@@ -1,0 +1,41 @@
+BIBLE.chapter("genesis", 6, {
+  title: "Corruption and the ark",
+  keyVerse: "6:8",
+  summary: "Humanity multiplies, and so does evil. The mysterious 'sons of God' take wives from the 'daughters of man', the Nephilim appear, and God limits human life. The LORD sees that 'every intention of the thoughts of his heart was only evil continually', and he is grieved to his heart that he made man. He resolves to blot out what he has made.\n\n'But Noah found favour in the eyes of the LORD.' Noah is righteous and blameless in his generation and walks with God. God tells him that the earth is filled with violence and commands him to build an ark of gopher wood, about 450 feet (137 m) long, with three decks. God promises a covenant with Noah, and Noah does all that God commands.",
+  outline: [
+    { ref: "6:1-4", text: "The sons of God, the daughters of man, and the Nephilim" },
+    { ref: "6:5-8", text: "God grieves over human evil; Noah finds favour" },
+    { ref: "6:9-12", text: "Noah's character; the earth corrupt and violent" },
+    { ref: "6:13-22", text: "Instructions for the ark; the promised covenant" },
+  ],
+  era: "primeval",
+  date: { traditional: "Before AM 1656 (the 120 years of 6:3 may be the time left before the flood)", scholarly: "Undated", am: 1536 },
+  people: [
+    { id: "noah", note: "Righteous, blameless, walks with God; builds the ark in obedience." },
+    { id: "shem" }, { id: "ham" }, { id: "japheth" },
+    { id: "noahs-wife", note: "Included in God's covenant (6:18)." },
+  ],
+  lineage: { title: "Noah's household", root: "noah", include: ["shem", "ham", "japheth"], highlight: ["noah"],
+    note: "Eight people enter the ark: Noah, his wife, his three sons and their wives (1 Pet 3:20)." },
+  timeline: { people: ["methuselah", "lamech", "noah", "shem"], markLabel: "120 years before the flood" },
+  context: [
+    { title: "Who were the 'sons of God'?", body: "There are three main views. (1) Fallen angels who took human wives, the oldest Jewish reading, perhaps reflected in 2 Pet 2:4 and Jude 6. (2) The godly line of Seth intermarrying with the ungodly line of Cain, held by Augustine and many Reformers. (3) Ancient kings or tyrants claiming divine status and taking harems. The text is brief, and its main point is clear: boundaries are being violated and evil is escalating." },
+    { title: "The ark", body: "Three hundred by fifty by thirty cubits is about 137 × 23 × 14 metres. That is a box-shaped barge built for stability rather than steering, with a ratio close to modern cargo ships. The word for 'ark' (tevah) appears elsewhere only for the basket that carries baby Moses through the Nile (Exod 2:3). Both are vessels of rescue through deadly water." },
+    { title: "Flood stories elsewhere", body: "Mesopotamian literature has its own flood hero: Atrahasis, or Utnapishtim in the Gilgamesh Epic, who builds a boat and releases birds. In those stories the gods flood the earth because humans are too noisy. In Genesis one holy God judges real moral evil, grieves over it, and saves a righteous man by grace." },
+  ],
+  gospel: [
+    { type: "theme", title: "Grace in the middle of judgement", ot: "6:8", nt: ["Eph 2:4-9", "Titus 3:4-7"],
+      body: "Before Noah is described as righteous, we're told he 'found favour' (grace) in God's eyes. Salvation in Scripture always begins with God's grace, which then produces a life that walks with him." },
+    { type: "fulfillment", title: "As in the days of Noah", ot: "6:5-7", nt: ["Matt 24:37-39", "2 Pet 3:5-7"],
+      body: "Jesus says his return will be like the flood: people going about life unaware, until judgement arrives. Peter adds that the same word that brought the flood has stored up the present world for a final judgement." },
+    { type: "theme", title: "A preacher of righteousness", ot: "6:22", nt: ["2 Pet 2:5", "Heb 11:7"],
+      body: "Noah built in faith what he had not yet seen, and his obedience 'condemned the world'. Peter calls him 'a herald of righteousness'. His long years of building were a standing warning and invitation." },
+  ],
+  themes: ["sin's spread", "God's grief", "judgement", "grace", "obedience", "covenant"],
+  questions: [
+    "God is 'grieved to his heart' over sin. How does that shape your picture of God's judgement?",
+    "Noah 'did all that God commanded him' over years of building. What long obedience is God asking of you?",
+    "Jesus compares our times to Noah's days. What would readiness look like for you?",
+  ],
+  crossrefs: ["Matt 24:37-39", "Luke 17:26-27", "Heb 11:7", "1 Pet 3:20", "2 Pet 2:4-5"],
+});

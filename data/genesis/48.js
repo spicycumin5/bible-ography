@@ -1,0 +1,47 @@
+BIBLE.chapter("genesis", 48, {
+  title: "Jacob blesses Ephraim and Manasseh",
+  keyVerse: "48:15-16",
+  summary: "Joseph hears his father is ill and brings his two sons. Jacob gathers his strength and sits up. He recalls God Almighty appearing to him at Luz (Bethel) with the promise of fruitfulness and land, and then adopts Joseph's sons as his own: 'Ephraim and Manasseh shall be mine, as Reuben and Simeon are.' Each will become a tribe in Israel. He remembers Rachel, buried on the way to Ephrath.\n\nJoseph positions his sons so that Manasseh, the firstborn, is at Jacob's right hand and Ephraim at his left. But Jacob, nearly blind, deliberately crosses his arms and puts his right hand on the younger. He blesses Joseph through the boys: 'The God before whom my fathers Abraham and Isaac walked, the God who has been my shepherd all my life long to this day, the angel who has redeemed me from all evil, bless the boys.' When Joseph tries to correct him, Jacob refuses: 'I know, my son, I know.' The younger will be greater. Jacob also gives Joseph an extra portion of land, a double inheritance.",
+  outline: [
+    { ref: "48:1-7", text: "Jacob adopts Ephraim and Manasseh" },
+    { ref: "48:8-16", text: "The crossed hands; the blessing of the shepherd God" },
+    { ref: "48:17-20", text: "The younger set before the older" },
+    { ref: "48:21-22", text: "'God will be with you and bring you again to the land'" },
+  ],
+  era: "egypt",
+  date: { traditional: "c. 1859 BC (Jacob 147)", scholarly: "Middle Bronze Age", year: -1859 },
+  places: [
+    { id: "goshen", role: "Jacob's sickbed", primary: true },
+    { id: "bethel", role: "Jacob recalls God's appearance at Luz" },
+    { id: "ephrath", role: "Rachel's burial, remembered" },
+    { id: "shechem", role: "The 'one mountain slope' (Hebrew shechem) given to Joseph" },
+  ],
+  people: [
+    { id: "jacob", note: "Near death, he blesses with deliberate prophetic insight." },
+    { id: "joseph", note: "Brings his sons and tries to correct his father." },
+    { id: "manasseh", note: "The firstborn, given the lesser blessing." },
+    { id: "ephraim", note: "The younger, set before his brother." },
+    { id: "rachel", note: "Remembered by Jacob as he blesses her grandsons." },
+  ],
+  lineage: { title: "Joseph's double portion", root: "jacob", include: ["reuben", "simeon", "manasseh", "ephraim"], highlight: ["manasseh", "ephraim"],
+    note: "By adopting Joseph's sons, Jacob gives Rachel's firstborn the double portion of the firstborn, which Reuben had forfeited (1 Chr 5:1-2)." },
+  context: [
+    { title: "Adoption and inheritance", body: "Grandparents adopting grandchildren as heirs is attested in Ugaritic and other ancient texts. Through it Joseph receives two tribal shares. Later, Levi receives no land, so Ephraim and Manasseh keep the count of land-holding tribes at twelve." },
+    { title: "The younger over the older", body: "It is a recurring pattern: Abel over Cain, Isaac over Ishmael, Jacob over Esau, Perez over Zerah, Joseph over Reuben, Ephraim over Manasseh, and later David, the youngest of Jesse's sons. God's choice regularly overturns human expectation and the rights of birth." },
+  ],
+  gospel: [
+    { type: "theme", title: "The shepherd and the redeemer", ot: "48:15-16", nt: ["John 10:11", "Ps 23:1", "Titus 2:14"],
+      body: "Jacob's final testimony names God as the shepherd who led him all his life and the angel who redeemed him from all evil. Jesus calls himself the good shepherd who lays down his life for the sheep, and the one who 'gave himself for us to redeem us from all lawlessness'." },
+    { type: "theme", title: "Grace reverses rank", ot: "48:19", nt: ["1 Cor 1:26-29", "Matt 20:16"],
+      body: "The crossed hands picture grace that doesn't follow human rules of entitlement. 'The last will be first, and the first last.' God chooses the weak to shame the strong, so that no one may boast." },
+    { type: "theme", title: "Blessing by faith", ot: "48:20", nt: ["Heb 11:21"],
+      body: "Hebrews picks this moment as the high point of Jacob's faith: 'By faith Jacob, when dying, blessed each of the sons of Joseph, bowing in worship over the head of his staff.' He blessed on the strength of God's promises, though he would die in Egypt." },
+  ],
+  themes: ["blessing", "adoption", "God as shepherd", "grace overturning expectation", "faith at the end of life"],
+  questions: [
+    "Jacob summarises his whole life as God shepherding and redeeming him. How would you summarise God's work in your life so far?",
+    "Joseph tried to correct his father. Where do you find it hard to accept that God's ways aren't yours?",
+    "Jacob passed his faith to his grandchildren. How are you passing on faith to the next generation?",
+  ],
+  crossrefs: ["Heb 11:21", "1 Chr 5:1-2", "Ps 23", "Num 6:24-26"],
+});

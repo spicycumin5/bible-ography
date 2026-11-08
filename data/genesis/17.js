@@ -1,0 +1,43 @@
+BIBLE.chapter("genesis", 17, {
+  title: "New names and the sign of circumcision",
+  keyVerse: "17:7",
+  summary: "Thirteen silent years after Ishmael's birth, the LORD appears to Abram at 99: 'I am God Almighty (El Shaddai); walk before me, and be blameless.' He confirms his covenant: Abram will be the father of a multitude of nations, so his name becomes Abraham. Kings will come from him; God will be God to him and his offspring after him, and give them Canaan as an everlasting possession.\n\nThe covenant sign is circumcision of every male on the eighth day, servants included. Sarai's name becomes Sarah, and she too will be a mother of nations, bearing a son within a year. Abraham falls on his face and laughs: a hundred-year-old man and a ninety-year-old woman? 'Oh that Ishmael might live before you!' God promises to bless Ishmael with twelve princes, but his covenant will be with Isaac. That very day Abraham circumcises himself, Ishmael and every male in his house.",
+  outline: [
+    { ref: "17:1-8", text: "El Shaddai; Abram renamed Abraham; the everlasting covenant" },
+    { ref: "17:9-14", text: "Circumcision as the covenant sign" },
+    { ref: "17:15-22", text: "Sarai renamed Sarah; Isaac promised; Ishmael blessed" },
+    { ref: "17:23-27", text: "Abraham obeys that same day" },
+  ],
+  era: "patriarchs",
+  date: { traditional: "c. 2067 BC (Abraham 99, Ishmael 13)", scholarly: "Middle Bronze Age", year: -2067 },
+  places: [{ id: "mamre", role: "Abraham's camp near Hebron", primary: true }, { id: "canaan", role: "Promised 'for an everlasting possession'" }],
+  people: [
+    { id: "abraham", note: "Renamed from Abram ('exalted father') to Abraham ('father of a multitude')." },
+    { id: "sarah", note: "Renamed from Sarai to Sarah; promised a son and royal descendants." },
+    { id: "ishmael", note: "Circumcised at 13; promised blessing and twelve princes." },
+    { id: "isaac", note: "Named before conception: 'he laughs'." },
+  ],
+  lineage: { title: "Abraham's sons", root: "abraham", include: ["ishmael", "isaac"], highlight: ["isaac", "ishmael"] },
+  context: [
+    { title: "El Shaddai", body: "'God Almighty' is the name used with the patriarchs, usually in promises of fruitfulness (28:3; 35:11; 48:3). Its exact meaning is debated ('God of the mountain', 'God who is sufficient'), but it emphasises his power to do what is humanly impossible, such as give a son to a 99-year-old." },
+    { title: "Circumcision", body: "Egyptians and some West Semitic peoples practised circumcision, usually at puberty or marriage. Israel's version was distinctive: done on the eighth day, to infants, as a covenant sign. It marked the very organ of procreation, since the promise was about offspring. Even servants' sons were included, so it was not simply an ethnic marker." },
+    { title: "The power of a name", body: "In the ancient world a renaming usually came from a superior, like a king renaming a vassal (2 Kgs 23:34). God renames Abraham and Sarah to show that they belong to him and to define who they are by his promise rather than their circumstances." },
+  ],
+  gospel: [
+    { type: "fulfillment", title: "Father of many nations", ot: "17:5", nt: ["Rom 4:16-17", "Gal 3:7"],
+      body: "Paul quotes 17:5 to show that Abraham is the father of all who share his faith, Jew and Gentile. The promise of 'many nations' is fulfilled as the gospel spreads worldwide." },
+    { type: "type", title: "Circumcision of the heart", ot: "17:10-11", nt: ["Rom 4:9-12", "Col 2:11-12", "Rom 2:28-29", "Deut 30:6"],
+      body: "Abraham was counted righteous (15:6) before he was circumcised, so the sign was 'a seal of the righteousness he had by faith'. Moses and the prophets already spoke of circumcised hearts. Paul says believers are circumcised 'with a circumcision made without hands' in Christ, a reality pictured in baptism." },
+    { type: "promise", title: "I will be their God", ot: "17:7", nt: ["2 Cor 6:16", "Rev 21:3", "Heb 8:10"],
+      body: "The heart of every covenant is this promise: 'to be God to you and to your offspring after you'. It echoes through the prophets and reaches its fulfilment in Revelation: 'Behold, the dwelling place of God is with man… they will be his people, and God himself will be with them as their God.'" },
+    { type: "promise", title: "Kings shall come from you", ot: "17:6", nt: ["Matt 1:1", "Luke 1:32-33"],
+      body: "From Abraham and Sarah will come kings, among them David and ultimately the King of kings. Matthew opens his Gospel: 'Jesus Christ, the son of David, the son of Abraham.'" },
+  ],
+  themes: ["covenant", "identity", "names", "signs and seals", "God's power", "laughter"],
+  questions: [
+    "God gave Abraham and Sarah new names before anything visible had changed. How does God define who you are?",
+    "Abraham laughed at the promise. When have God's promises seemed laughable to you?",
+    "Abraham obeyed 'that very day'. Is there an act of obedience you have been postponing?",
+  ],
+  crossrefs: ["Rom 4:9-17", "Col 2:11-12", "Gal 3:7-9", "Acts 7:8", "Heb 11:11-12"],
+});

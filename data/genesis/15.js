@@ -1,0 +1,46 @@
+BIBLE.chapter("genesis", 15, {
+  title: "The covenant between the pieces",
+  keyVerse: "15:6",
+  summary: "'Fear not, Abram, I am your shield; your reward shall be very great.' But Abram pushes back: what good is a reward when I have no child, and my servant Eliezer of Damascus will inherit everything? God takes him outside: 'Look toward heaven, and number the stars… So shall your offspring be.' And Abram 'believed the LORD, and he counted it to him as righteousness'.\n\nWhen Abram asks how he can know he will possess the land, God has him cut a heifer, a goat and a ram in half and lay the pieces in two rows. As the sun sets, a deep sleep and a dreadful darkness fall on Abram. God foretells that his offspring will be strangers and slaves in a foreign land for 400 years, then come out with great possessions. Then a smoking fire pot and a flaming torch pass between the pieces. God alone walks the path, binding himself to give Abram's offspring the land from the river of Egypt to the Euphrates.",
+  outline: [
+    { ref: "15:1-6", text: "Abram's question; the stars; faith counted as righteousness" },
+    { ref: "15:7-11", text: "The covenant ritual prepared" },
+    { ref: "15:12-16", text: "Prophecy of 400 years of affliction and Exodus" },
+    { ref: "15:17-21", text: "God alone passes between the pieces; the land's boundaries" },
+  ],
+  era: "patriarchs",
+  date: { traditional: "c. 2081 BC (before Ishmael's birth)", scholarly: "Middle Bronze Age", year: -2081 },
+  setting: "Probably at Mamre near Hebron. The promised borders stretch from 'the river of Egypt' (probably the Wadi el-Arish in northern Sinai) to the Euphrates, a span Israel came near to only under David and Solomon.",
+  places: [
+    { id: "mamre", role: "Probably where the vision takes place", primary: true },
+    { id: "ur", role: "'I am the LORD who brought you out from Ur of the Chaldeans' (15:7)" },
+    { id: "egypt", role: "The foreign land of future servitude (15:13); its 'river' is the southern border" },
+    { id: "euphrates", role: "Northern border of the promised land" },
+    { id: "damascus", role: "Home of Eliezer, Abram's presumed heir" },
+    { id: "canaan" },
+  ],
+  people: [
+    { id: "abraham", note: "Called Abram; honest about his doubt, and believes God's promise." },
+    { id: "eliezer", note: "The household servant who would inherit if Abram stays childless." },
+  ],
+  context: [
+    { title: "Cutting a covenant", body: "Hebrew speaks of 'cutting' a covenant. In ancient treaty rituals the parties walked between the halves of slaughtered animals, in effect saying 'may I become like these if I break my oath'. Jeremiah 34:18-20 describes the same ritual. The astonishing thing here is that only God passes through. Abram is asleep. God takes the whole curse of the covenant on himself." },
+    { title: "An heir by adoption", body: "Tablets from Nuzi (15th century BC) show childless couples adopting a servant as heir, who would be displaced if a natural son was born. Abram's plan to make Eliezer his heir fits that customary law, and God's reply ('your very own son shall be your heir') overrides it." },
+    { title: "The iniquity of the Amorites", body: "Why the 400-year delay? Partly so Israel can grow into a nation in Egypt, and partly because 'the iniquity of the Amorites is not yet complete' (15:16). God's judgement on Canaan would not be arbitrary or premature. He waits patiently for centuries." },
+  ],
+  gospel: [
+    { type: "fulfillment", title: "Counted as righteousness", ot: "15:6", nt: ["Rom 4:1-5", "Rom 4:18-25", "Gal 3:6-9", "Jas 2:23"],
+      body: "This is one of the most important verses in the Bible. Paul builds his case for justification by faith on it: Abraham was declared righteous by believing God's promise, before circumcision and before the law. 'The words \"it was counted to him\" were not written for his sake alone, but for ours also', who believe in the God who raised Jesus." },
+    { type: "type", title: "God bears the curse himself", ot: "15:17", nt: ["Gal 3:13-14", "Heb 6:13-18"],
+      body: "Only the fire pot and torch, symbols of God's presence like the later pillar of fire, walk between the pieces. God pledges his own life to keep the promise. At the cross, God in Christ actually bore the curse for covenant-breakers, 'so that in Christ Jesus the blessing of Abraham might come to the Gentiles'." },
+    { type: "theme", title: "Descendants like the stars", ot: "15:5", nt: ["Gal 3:29", "Rev 7:9", "Heb 11:12"],
+      body: "Abram's offspring 'as many as the stars of heaven' are fulfilled in Israel and ultimately in a multitude no one can number, all who belong to Christ, Abraham's offspring and heirs." },
+  ],
+  themes: ["faith", "righteousness", "covenant", "honest doubt", "God's oath", "patience"],
+  questions: [
+    "Abram brought his real disappointment to God. What would it look like for you to pray that honestly?",
+    "What did Abram actually do to be counted righteous? How does this shape your understanding of salvation?",
+    "God walked the covenant path alone while Abram slept. How does that picture comfort you when your faith feels weak?",
+  ],
+  crossrefs: ["Rom 4", "Gal 3:6-18", "Heb 6:13-20", "Jer 34:18-20", "Exod 12:40-41", "Acts 7:6-7"],
+});

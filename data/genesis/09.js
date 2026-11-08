@@ -1,0 +1,43 @@
+BIBLE.chapter("genesis", 9, {
+  title: "The rainbow covenant",
+  keyVerse: "9:13",
+  summary: "God blesses Noah and his sons and renews the creation mandate: be fruitful, multiply, fill the earth. Animals are now given for food, but not with their lifeblood, and human life is protected by a solemn principle: 'Whoever sheds the blood of man, by man shall his blood be shed, for God made man in his own image.'\n\nGod then makes a covenant with Noah, his descendants and every living creature: never again will a flood destroy the earth. The sign is the bow in the clouds. The chapter ends on a sour note. Noah plants a vineyard, gets drunk and lies uncovered in his tent. Ham sees and tells his brothers; Shem and Japheth cover their father, walking backwards. Noah curses Canaan, Ham's son, and blesses the God of Shem. Noah dies at 950.",
+  outline: [
+    { ref: "9:1-7", text: "Blessing renewed; food, blood and the sanctity of human life" },
+    { ref: "9:8-17", text: "The covenant with all creation; the sign of the bow" },
+    { ref: "9:18-23", text: "Noah's drunkenness; Ham's dishonour; his brothers' respect" },
+    { ref: "9:24-29", text: "Curse on Canaan, blessing on Shem and Japheth; Noah's death" },
+  ],
+  era: "primeval",
+  date: { traditional: "AM 1657 onward; Noah dies AM 2006", scholarly: "Undated", am: 1657 },
+  places: [{ id: "ararat", role: "Noah's family begins again in the region where the ark landed" }],
+  people: [
+    { id: "noah", note: "Receives God's covenant; later falls into drunkenness; prophesies over his sons." },
+    { id: "shem", note: "Covers his father; blessed: 'Blessed be the LORD, the God of Shem'." },
+    { id: "japheth", note: "Joins Shem in honouring Noah; promised enlargement and a place 'in the tents of Shem'." },
+    { id: "ham", note: "Sees his father's nakedness and tells his brothers." },
+    { id: "canaan-son-of-ham", note: "Ham's son, on whom Noah's curse falls." },
+  ],
+  lineage: { title: "Noah's sons", root: "noah", include: ["shem", "ham", "japheth", "canaan-son-of-ham"], highlight: ["shem", "ham", "japheth", "canaan-son-of-ham"] },
+  timeline: { people: ["noah", "shem", "arphaxad"], markLabel: "Covenant with Noah" },
+  context: [
+    { title: "A covenant with all creation", body: "This is the first covenant God names in the Bible. It is unconditional; God alone makes promises and humans do nothing to earn them. It covers every living creature. Theologians call it the covenant of 'common grace': God preserves the world, its seasons and its peoples so that the story of redemption can unfold." },
+    { title: "The bow", body: "The Hebrew word for rainbow (qeshet) is the ordinary word for a warrior's bow. God hangs up his weapon in the sky, pointed away from the earth. And the sign is for God himself to 'remember' (9:15-16), a gracious way of assuring Noah that God will not forget." },
+    { title: "The curse on Canaan", body: "Why does Noah curse Canaan rather than Ham? Perhaps because Ham's son would share his father's character. Israel, reading this before entering Canaan, would recognise the sexual practices condemned in Lev 18:3, 24-28. This text was tragically misused in later centuries to justify enslaving Africans. It says nothing about skin colour, and Canaan's descendants were not Africans." },
+  ],
+  gospel: [
+    { type: "theme", title: "Life is in the blood", ot: "9:4-6", nt: ["Heb 9:22", "1 Pet 1:18-19", "Acts 15:20"],
+      body: "Because life is in the blood, blood becomes the currency of atonement in Israel's sacrifices, and the early church still asked Gentile believers to respect this rule. The New Testament says we are redeemed 'with the precious blood of Christ, like that of a lamb without blemish'." },
+    { type: "fulfillment", title: "The covenant-keeping God", ot: "9:16", nt: ["Isa 54:9-10", "Rev 4:3", "Luke 22:20"],
+      body: "Isaiah uses Noah's covenant to guarantee God's steadfast love: as he swore the waters would not return, so his covenant of peace will not be removed. In Revelation a rainbow encircles God's throne. Jesus inaugurates the 'new covenant in my blood'." },
+    { type: "promise", title: "The God of Shem", ot: "9:26-27", nt: ["Luke 3:36", "Eph 2:12-13"],
+      body: "Noah ties blessing to the God of Shem, from whom Abraham, Israel and Jesus descend (Luke 3:36). Japheth will 'dwell in the tents of Shem', and many have seen in this a hint of the Gentile nations being brought near through Israel's Messiah." },
+  ],
+  themes: ["covenant", "human dignity", "justice", "God's patience", "honour and shame", "the righteous still fall"],
+  questions: [
+    "Why is human life so precious that taking it carries the weight of 9:6? How does that apply today?",
+    "God gave a visible sign to help Noah trust his promise. What signs has God given you (baptism, the Lord's Supper, his word)?",
+    "Even righteous Noah fell after the flood. What does that tell you about the human heart, and our need for a better rescuer?",
+  ],
+  crossrefs: ["Isa 54:9-10", "Lev 17:11", "Rom 13:4", "Ezek 1:28", "Rev 4:3"],
+});

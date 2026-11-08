@@ -1,0 +1,53 @@
+BIBLE.chapter("genesis", 50, {
+  title: "'You meant evil, but God meant it for good'",
+  keyVerse: "50:20",
+  summary: "Joseph falls on his father's face, weeps and kisses him. Egyptian physicians embalm Jacob over forty days, and Egypt mourns him seventy days, almost a royal mourning. With Pharaoh's permission, a great procession of Joseph, his brothers, and Pharaoh's officials, chariots and horsemen goes up to Canaan. At the threshing floor of Atad beyond the Jordan they hold a seven-day lament so intense that the Canaanites name the place Abel-mizraim, 'mourning of Egypt'. Jacob's sons bury him in the cave of Machpelah.\n\nBack in Egypt, the brothers fear that Joseph will now pay them back. They send a message claiming their father asked Joseph to forgive them, and they come and fall down before him: 'Behold, we are your servants.' Joseph weeps. 'Do not fear, for am I in the place of God? As for you, you meant evil against me, but God meant it for good, to bring it about that many people should be kept alive.' He comforts them and promises to provide for them and their little ones. Joseph lives to 110 and sees Ephraim's great-grandchildren. Before he dies he says: 'God will surely visit you and bring you up out of this land to the land he swore to Abraham, to Isaac, and to Jacob… you shall carry up my bones from here.' He is embalmed and placed in a coffin in Egypt.",
+  outline: [
+    { ref: "50:1-3", text: "Jacob embalmed and mourned" },
+    { ref: "50:4-14", text: "The great funeral procession to Machpelah" },
+    { ref: "50:15-21", text: "The brothers' fear; Joseph's forgiveness" },
+    { ref: "50:22-26", text: "Joseph's death and his faith-filled final words" },
+  ],
+  era: "egypt",
+  date: { traditional: "Jacob's burial c. 1859 BC; Joseph dies c. 1806 BC", scholarly: "Middle Bronze Age", year: -1859,
+    note: "110 years was the ideal Egyptian lifespan in Egyptian texts. Joseph's age at death marks him as a man who lived a full, blessed life in Egyptian terms." },
+  setting: "The funeral procession travels from Goshen to Hebron, apparently by a roundabout route that brings it to the Jordan, foreshadowing the path Israel itself will take centuries later in the Exodus.",
+  places: [
+    { id: "goshen", role: "Jacob dies; Joseph later dies here too" },
+    { id: "atad", role: "The seven-day mourning 'beyond the Jordan'" },
+    { id: "machpelah", role: "Jacob buried with his fathers", primary: true },
+    { id: "egypt", role: "Joseph's coffin awaits the Exodus" },
+  ],
+  journeys: [
+    { label: "Jacob's funeral procession", path: ["goshen", "atad", "machpelah"], ref: "50:7-13" },
+    { label: "Return to Egypt", path: ["machpelah", "goshen"], ref: "50:14" },
+  ],
+  people: [
+    { id: "jacob", note: "Embalmed, mourned by Egypt, and buried in the promised land." },
+    { id: "joseph", note: "Forgives his brothers fully and dies trusting God's promise to bring Israel home." },
+    { id: "pharaoh-joseph", note: "Honours Jacob with an Egyptian state funeral." },
+    { id: "reuben" }, { id: "judah" }, { id: "benjamin" },
+    { id: "ephraim", note: "Joseph lives to see his great-grandchildren." },
+    { id: "manasseh", note: "His grandson Machir's children are 'born on Joseph's knees' (adopted)." },
+  ],
+  timeline: { people: ["jacob", "joseph", "levi"], markLabel: "Jacob buried" },
+  context: [
+    { title: "Embalming", body: "Egyptian mummification took about seventy days in later sources, with forty days of drying the body in natron. Jacob and Joseph are the only people in the Bible said to be embalmed. Joseph's coffin probably resembled the painted wooden coffins of Middle Kingdom officials." },
+    { title: "The bones of Joseph", body: "Joseph's request is honoured: Moses takes his bones at the Exodus (Exod 13:19), and they are buried at Shechem in the plot Jacob bought (Josh 24:32). For 400 years his unburied coffin in Egypt was a silent sermon that God would keep his promise." },
+  ],
+  gospel: [
+    { type: "fulfillment", title: "Evil meant for good", ot: "50:20", nt: ["Acts 2:23-24", "Acts 4:27-28", "Rom 8:28"],
+      body: "Joseph's words sum up Genesis, and the gospel. At the cross, human beings did the greatest evil ever done, killing the innocent Son of God, yet God 'meant it for good, to bring it about that many people should be kept alive'. Peter preaches that Jesus was crucified by lawless men 'according to the definite plan and foreknowledge of God'." },
+    { type: "theme", title: "Am I in the place of God?", ot: "50:19", nt: ["Rom 12:19", "Eph 4:32", "Col 3:13"],
+      body: "Joseph refuses to take vengeance because judgement belongs to God, and he responds to his brothers' fear with kindness. 'Be kind to one another, tenderhearted, forgiving one another, as God in Christ forgave you.'" },
+    { type: "promise", title: "God will surely visit you", ot: "50:24-25", nt: ["Heb 11:22", "Luke 1:68", "Luke 7:16"],
+      body: "Genesis ends with a coffin in Egypt and a promise: God will 'visit' his people and bring them out. Exodus begins the fulfilment. Zechariah sings of the coming of Jesus in the same terms: 'Blessed be the Lord God of Israel, for he has visited and redeemed his people.'" },
+  ],
+  themes: ["grief", "forgiveness", "providence", "fear and assurance", "hope in God's promise"],
+  questions: [
+    "Joseph's brothers still feared him seventeen years after he forgave them. Why is it sometimes hard to believe we're truly forgiven?",
+    "Where in your life can you see, or begin to trust, that God might mean for good what others meant for evil?",
+    "Genesis begins with life in a garden and ends with a coffin in Egypt. How does Joseph's final request point forward with hope?",
+  ],
+  crossrefs: ["Gen 45:5-8", "Rom 8:28", "Heb 11:22", "Exod 13:19", "Josh 24:32", "Acts 7:15-16"],
+});

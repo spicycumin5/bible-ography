@@ -1,0 +1,48 @@
+BIBLE.chapter("genesis", 36, {
+  title: "The generations of Esau",
+  keyVerse: "36:8",
+  summary: "'These are the generations of Esau (that is, Edom).' Esau's three Canaanite and Ishmaelite wives and five sons are listed. Because the land couldn't support both brothers' herds, Esau moves away from Jacob to the hill country of Seir. The chapter then traces his descendants: the sons of Eliphaz (including Teman and Amalek), the sons of Reuel, and the clan chiefs descended from Esau.\n\nIt also lists the earlier Horite inhabitants of Seir, descendants of Seir, whose clans intermarried with Esau's. Then come eight kings who reigned in Edom 'before any king reigned over the Israelites'. Edom becomes a kingdom long before Israel does. The chapter is a brief but respectful survey of the brother outside the line of promise, before the story returns to Jacob's family.",
+  outline: [
+    { ref: "36:1-8", text: "Esau's wives and sons; he settles in Seir" },
+    { ref: "36:9-19", text: "Esau's descendants and clan chiefs" },
+    { ref: "36:20-30", text: "The Horite clans of Seir" },
+    { ref: "36:31-43", text: "The kings and chiefs of Edom" },
+  ],
+  era: "patriarchs",
+  date: { traditional: "Covers several centuries from c. 1960 BC onward", scholarly: "Edomite kingship is well attested from the Iron Age (after c. 1200 BC); earlier tribal chiefdoms are plausible", year: -1900,
+    note: "The list of kings 'before any king reigned over Israel' (36:31) reaches down to the time of Moses or later. It is one of several notes suggesting the book was edited after Moses." },
+  setting: "Seir is the rugged mountain range east of the Arabah, the rift valley running from the Dead Sea to the Gulf of Aqaba. It is the land of red sandstone later famous for Petra.",
+  places: [
+    { id: "edom", role: "Esau settles in the hill country of Seir", primary: true },
+    { id: "bozrah", role: "Home of Jobab, an early king of Edom" },
+    { id: "canaan", role: "Esau leaves Canaan to make room for Jacob" },
+  ],
+  journeys: [{ label: "Esau moves to Seir", path: ["hebron", "edom"], ref: "36:6-8" }],
+  people: [
+    { id: "esau", note: "Settles in Seir and becomes the father of Edom." },
+    { id: "adah-esau" }, { id: "basemath" }, { id: "oholibamah" },
+    { id: "eliphaz", note: "Esau's firstborn; father of Teman and Amalek." },
+    { id: "reuel-esau" }, { id: "jeush" }, { id: "jalam" }, { id: "korah-esau" },
+    { id: "teman", note: "His clan gives its name to an Edomite region." },
+    { id: "amalek", note: "Ancestor of the Amalekites, Israel's future enemy." },
+  ],
+  lineage: { title: "Esau's descendants", root: "esau", include: ["eliphaz", "reuel-esau", "jeush", "jalam", "korah-esau", "teman", "amalek"], highlight: ["esau", "amalek"],
+    note: "Only some of Esau's grandsons are shown. Eliphaz also had Omar, Zepho, Gatam and Kenaz; Reuel had four sons." },
+  context: [
+    { title: "Edom and Israel", body: "Edom and Israel remained 'brothers' (Deut 23:7) but were often bitter enemies. Edom refused Israel passage in the wilderness, fought Saul and David, and gloated over Jerusalem's fall (Obadiah). Herod the Great was an Idumean, a descendant of the Edomites, which gives an ironic twist to his attempt to kill the infant king of the Jews." },
+    { title: "Why include this chapter?", body: "God promised Abraham that kings and nations would come from him (17:6), and Esau's line shows that promise being fulfilled even outside the covenant line. God keeps his word to Esau too, giving him Seir as a possession (Deut 2:5)." },
+  ],
+  gospel: [
+    { type: "theme", title: "Mercy for Edom and the nations", ot: "36:8", nt: ["Amos 9:11-12", "Acts 15:13-18", "Mark 3:8"],
+      body: "Amos prophesied that David's restored house would possess 'the remnant of Edom and all the nations who are called by my name'. James quotes this at the Jerusalem council (in the Greek form, 'the remnant of mankind') to show that Gentiles are welcome in the church. Crowds from Idumea (Edom) came to hear Jesus." },
+    { type: "theme", title: "God's patience with the 'other' line", ot: "36:1", nt: ["Rom 9:13-16", "Rom 11:32"],
+      body: "Genesis keeps track of the side branches (Ishmael, Esau) before returning to the main line. God's choice of Jacob was a choice to bring blessing through one line to all, not a lack of interest in the rest." },
+  ],
+  themes: ["genealogy", "nations", "promise fulfilled", "brotherhood and rivalry"],
+  questions: [
+    "Esau's line had kings long before Israel. How does the chapter show that worldly success comes faster than God's promise sometimes does?",
+    "Why do you think Genesis gives space to the families outside the line of promise?",
+    "How does the story of Edom and Israel help you think about long-running conflicts between 'brother' peoples or communities?",
+  ],
+  crossrefs: ["1 Chr 1:35-54", "Deut 2:4-5", "Deut 23:7", "Obad 1-21", "Mal 1:2-4"],
+});

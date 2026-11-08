@@ -1,0 +1,46 @@
+BIBLE.chapter("genesis", 2, {
+  title: "Rest, the garden, and the first marriage",
+  keyVerse: "2:7",
+  summary: "On the seventh day God rests from his work and blesses and sanctifies the day. Then the story zooms in from the cosmos to a garden. The LORD God forms the man from the dust and breathes into him the breath of life. He plants a garden in Eden, with the tree of life and the tree of the knowledge of good and evil, and gives the man work, freedom and one prohibition.\n\n'It is not good that the man should be alone.' After the man names the animals and finds no fitting partner, God builds a woman from his side and brings her to him. The man bursts into the first poem, and the narrator draws the lesson: a man leaves his parents and holds fast to his wife, and they become one flesh, naked and unashamed.",
+  outline: [
+    { ref: "2:1-3", text: "The seventh day: God rests and blesses it" },
+    { ref: "2:4-7", text: "The LORD God forms the man from dust and breathes life into him" },
+    { ref: "2:8-14", text: "The garden in Eden and its four rivers" },
+    { ref: "2:15-17", text: "Work, freedom and the one command" },
+    { ref: "2:18-25", text: "The woman made from the man; the first marriage" },
+  ],
+  era: "primeval",
+  date: { traditional: "Undated", scholarly: "Undated", am: 0, note: "Chapter 2 retells day six in close-up, focusing on the creation of the first couple and their home." },
+  setting: "Eden lay 'in the east', watered by a river that split into four: the Pishon, the Gihon, the Tigris and the Euphrates. The last two locate it in the Mesopotamian world, though its exact site is unknown.",
+  places: [
+    { id: "eden", role: "God plants a garden here for the man", primary: true },
+    { id: "tigris", role: "Third river of Eden (Hiddekel), flowing east of Assyria" },
+    { id: "euphrates", role: "Fourth river of Eden" },
+    { id: "cush", role: "The Gihon 'flows around the whole land of Cush' (identification debated)" },
+    { id: "assyria" },
+  ],
+  people: [
+    { id: "adam", note: "Formed from the dust, made alive by God's breath, given the garden to work and keep." },
+    { id: "eve", note: "Built from the man's side as 'a helper fit for him', a partner who corresponds to him." },
+  ],
+  context: [
+    { title: "A garden-temple", body: "Eden is described in language later used for Israel's tabernacle and temple. It faces east, is guarded by cherubim (3:24), and is decorated with gold and precious stones. The verbs for the man's job, 'work' and 'keep' (2:15), are the same pair used of priests serving in the tabernacle (Num 3:7-8). Eden is the first place where God dwells with his people, and the man is its first priest." },
+    { title: "'Helper' doesn't mean inferior", body: "The Hebrew 'ezer ('helper') is most often used of God himself helping Israel (Ps 33:20; 121:1-2). 'Fit for him' (kenegdo) means 'corresponding to him' or 'like opposite him'. The woman is the man's equal partner, the one creature who matches him." },
+    { title: "Sabbath rest", body: "The seventh day has no 'evening and morning' refrain. Israel's Sabbath law was grounded in this pattern (Exod 20:8-11), and the rest of Scripture treats God's rest as something his people are invited to enter." },
+  ],
+  gospel: [
+    { type: "fulfillment", title: "Entering God's rest", ot: "2:2-3", nt: ["Heb 4:1-11", "Matt 11:28-30"],
+      body: "Hebrews says God's seventh-day rest still remains open and is entered by faith in Christ. Jesus offers it in person: 'Come to me, all who labour and are heavy laden, and I will give you rest.'" },
+    { type: "type", title: "The last Adam, a life-giving spirit", ot: "2:7", nt: ["1 Cor 15:45-49", "John 20:22"],
+      body: "The first Adam received the breath of life; Christ, 'the last Adam', gives life. After his resurrection Jesus breathed on his disciples and said 'Receive the Holy Spirit', a new-creation echo of Genesis 2." },
+    { type: "type", title: "A bride from the side of the sleeping man", ot: "2:21-24", nt: ["Eph 5:25-32", "John 19:34"],
+      body: "Paul quotes 2:24 and says marriage was always a picture of Christ and the church. Early Christian writers noticed that as Eve came from the side of sleeping Adam, the church is born from the pierced side of Christ in the sleep of death." },
+  ],
+  themes: ["Sabbath", "life as God's gift", "work", "obedience", "marriage", "companionship"],
+  questions: [
+    "God gave Adam work before sin entered the world. What makes work good, and what has made it toilsome?",
+    "Out of the abundance of the garden, God forbade just one tree. Why do you think trust was tested this way?",
+    "How does seeing marriage as a picture of Christ and the church shape the way husbands and wives treat each other?",
+  ],
+  crossrefs: ["Exod 20:8-11", "Ps 121:1-2", "Matt 19:4-6", "Eph 5:31-32", "Rev 22:1-2"],
+});

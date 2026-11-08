@@ -1,0 +1,45 @@
+BIBLE.chapter("genesis", 28, {
+  title: "Jacob's ladder at Bethel",
+  keyVerse: "28:15",
+  summary: "Isaac sends Jacob away with a blessing ('God Almighty bless you… and give you the blessing of Abraham') and a charge to marry one of Laban's daughters, not a Canaanite. Esau, noticing, marries a daughter of Ishmael to please his father.\n\nJacob travels north alone. At sunset he stops at a place called Luz and sleeps with a stone under his head. He dreams of a stairway set on the earth with its top reaching heaven, and the angels of God ascending and descending on it. The LORD stands above it and gives the fugitive the promises of Abraham: land, offspring like the dust of the earth, blessing to all families of the earth, and 'Behold, I am with you and will keep you wherever you go, and will bring you back to this land.' Jacob wakes afraid: 'Surely the LORD is in this place, and I did not know it… This is none other than the house of God, and this is the gate of heaven.' He sets up the stone as a pillar, anoints it, renames the place Bethel and vows to give God a tenth.",
+  outline: [
+    { ref: "28:1-5", text: "Isaac blesses Jacob and sends him to Paddan-aram" },
+    { ref: "28:6-9", text: "Esau marries a daughter of Ishmael" },
+    { ref: "28:10-17", text: "The stairway dream and God's promise" },
+    { ref: "28:18-22", text: "The pillar at Bethel and Jacob's vow" },
+  ],
+  era: "patriarchs",
+  date: { traditional: "c. 1929 BC", scholarly: "Middle Bronze Age", year: -1929 },
+  setting: "Bethel lies about 100 km (60 miles) north of Beersheba, on the central ridge route. It is rocky high ground, where Abraham had built an altar decades earlier (12:8).",
+  places: [
+    { id: "beersheba", role: "Jacob sets out from here" },
+    { id: "bethel", role: "'The house of God… the gate of heaven'", primary: true },
+    { id: "haran", role: "Jacob's destination" }, { id: "paddan-aram" },
+  ],
+  journeys: [{ label: "Jacob's flight", path: ["beersheba", "bethel", "haran"], ref: "28:10" }],
+  people: [
+    { id: "jacob", note: "A fugitive with nothing but a staff (32:10), met by God at his lowest." },
+    { id: "isaac", note: "Now knowingly blesses Jacob with 'the blessing of Abraham'." },
+    { id: "esau", note: "Marries Mahalath (Basemath), daughter of Ishmael." },
+    { id: "basemath" },
+  ],
+  context: [
+    { title: "A stairway, not a ladder", body: "The Hebrew sullam probably means a ramp or stairway, like the steps up the side of a Mesopotamian ziggurat, which were thought to connect heaven and earth. Unlike Babel (11:4), this stairway is set down by God, not built up by people." },
+    { title: "Standing stones", body: "Standing stones (massebot) marked sacred sites across Canaan. Jacob's anointed pillar is a memorial of God's appearance. Later, when such pillars became objects of pagan worship, the law forbade them (Deut 16:22)." },
+  ],
+  gospel: [
+    { type: "fulfillment", title: "Jesus is the stairway", ot: "28:12", nt: ["John 1:51", "John 14:6", "1 Tim 2:5"],
+      body: "Jesus tells Nathanael, 'You will see heaven opened, and the angels of God ascending and descending on the Son of Man.' He is Jacob's stairway: the one place where heaven and earth meet and the way to God is opened." },
+    { type: "fulfillment", title: "The true house of God", ot: "28:17", nt: ["John 2:19-21", "Eph 2:19-22", "Rev 21:22"],
+      body: "Bethel means 'house of God'. Jesus calls his body the temple, the true meeting place of God and man. By the Spirit, the church becomes 'a holy temple in the Lord', and in the new creation God and the Lamb are the temple." },
+    { type: "theme", title: "Grace to the undeserving", ot: "28:15", nt: ["Rom 5:8", "Heb 13:5"],
+      body: "God meets Jacob on the run from his own lies, with no rebuke, only promises. This is grace: 'while we were still sinners, Christ died for us.' The promise 'I will not leave you' is repeated to every believer in Heb 13:5." },
+  ],
+  themes: ["God's presence", "grace", "revelation", "worship", "vows", "house of God"],
+  questions: [
+    "Jacob said, 'Surely the LORD is in this place, and I did not know it.' Where might God be present in your life without your noticing?",
+    "God's promise came to Jacob when he deserved it least. How does that shape your view of grace?",
+    "Jacob's vow is conditional ('If God will be with me…'). How does it compare with mature trust?",
+  ],
+  crossrefs: ["John 1:47-51", "Hos 12:4", "Gen 35:1-15", "Heb 13:5"],
+});

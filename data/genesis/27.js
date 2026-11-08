@@ -1,0 +1,41 @@
+BIBLE.chapter("genesis", 27, {
+  title: "Jacob steals the blessing",
+  keyVerse: "27:36",
+  summary: "Isaac, old and nearly blind, tells Esau to hunt game and make him the tasty food he loves, so that he can give him his blessing before he dies. Rebekah overhears and sets a counter-plan in motion. She cooks two young goats the way Isaac likes them, dresses Jacob in Esau's best clothes and covers his hands and neck with goatskin.\n\nJacob lies outright: 'I am Esau your firstborn.' Isaac is suspicious ('The voice is Jacob's voice, but the hands are the hands of Esau') but after kissing him and smelling his clothes, he blesses him with abundance, rule over nations and lordship over his brother. Moments later Esau arrives. Isaac trembles violently: the blessing is given and cannot be undone. Esau cries out bitterly, 'Bless me, even me also, O my father!' He receives only a lesser word: he will live by the sword, serve his brother, and one day break his yoke. Esau plans to kill Jacob after Isaac's death. Rebekah arranges for Jacob to flee to her brother Laban in Haran, 'for a few days'.",
+  outline: [
+    { ref: "27:1-17", text: "Isaac's plan and Rebekah's counter-plan" },
+    { ref: "27:18-29", text: "Jacob deceives his father and receives the blessing" },
+    { ref: "27:30-40", text: "Esau's bitter cry and lesser blessing" },
+    { ref: "27:41-46", text: "Esau's murderous grudge; Rebekah sends Jacob away" },
+  ],
+  era: "patriarchs",
+  date: { traditional: "c. 1929 BC (Jacob about 77, Isaac about 137)", scholarly: "Middle Bronze Age", year: -1929,
+    note: "The traditional date works back from Jacob's age of 130 when he entered Egypt (47:9). Isaac actually lived another 43 years after thinking he was about to die." },
+  places: [{ id: "beersheba", role: "Isaac's household (28:10)", primary: true }, { id: "haran", role: "Where Rebekah sends Jacob to escape Esau" }],
+  people: [
+    { id: "isaac", note: "Tries to bless Esau in spite of the oracle; deceived through his senses." },
+    { id: "rebekah", note: "Engineers the deception: 'Let your curse be on me, my son.' She never sees Jacob again." },
+    { id: "jacob", note: "Lies to his father three times to obtain the blessing." },
+    { id: "esau", note: "Weeps for the lost blessing, then plans murder." },
+  ],
+  lineage: { title: "Isaac's family", root: "isaac", include: ["esau", "jacob"], highlight: ["esau", "jacob"] },
+  context: [
+    { title: "The power of a spoken blessing", body: "In the ancient Near East a deathbed blessing was a binding, legal and spiritual act, like a will spoken aloud. Nuzi tablets record an oral blessing from a dying father being upheld in court. That is why Isaac can't simply take it back: the word has gone out." },
+    { title: "Everyone is to blame", body: "No one comes out of this chapter well. Isaac tries to bypass God's word for his favourite son. Rebekah manipulates. Jacob lies and uses God's name in the lie (27:20). Esau, who sold the birthright, now wants the blessing. Yet God's purpose stated in 25:23 still stands, accomplished through and in spite of their sins." },
+  ],
+  gospel: [
+    { type: "theme", title: "Clothed in the elder brother's garments", ot: "27:15-16", nt: ["Gal 3:27", "Phil 3:9", "Isa 61:10"],
+      body: "Jacob receives the father's blessing by wearing his elder brother's clothes and smelling like him. Many readers since the Reformation have noticed the gospel shadow here: we receive the Father's blessing not in our own name but clothed in Christ, 'the firstborn among many brothers'. Unlike Jacob's, our covering involves no deception, because Christ freely gives us his righteousness." },
+    { type: "theme", title: "God's purpose stands", ot: "27:29", nt: ["Rom 9:11-12", "Acts 2:23", "Rom 8:28"],
+      body: "God's choice of Jacob (25:23) is fulfilled through human scheming without God approving the scheming. The cross is the supreme case: wicked hands acted, yet Jesus was delivered up 'according to the definite plan and foreknowledge of God'." },
+    { type: "theme", title: "Too late for tears", ot: "27:38", nt: ["Heb 12:16-17"],
+      body: "Hebrews says Esau 'found no chance to repent, though he sought it with tears'. He regretted the loss but didn't truly turn. The warning is to value God's grace today, while it is offered." },
+  ],
+  themes: ["deception", "favouritism", "blessing", "consequences", "sovereignty and responsibility"],
+  questions: [
+    "Every character tries to control the outcome. Where are you tempted to manipulate instead of trusting God?",
+    "God's purpose was fulfilled, but the family paid a heavy price. How do you hold together God's sovereignty and human responsibility?",
+    "What does it mean to you to be 'clothed with Christ' when you come to the Father?",
+  ],
+  crossrefs: ["Heb 11:20", "Heb 12:16-17", "Rom 9:10-13", "Gen 25:23", "Obad 1-21"],
+});

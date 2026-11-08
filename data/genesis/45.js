@@ -1,0 +1,45 @@
+BIBLE.chapter("genesis", 45, {
+  title: "'I am Joseph'",
+  keyVerse: "45:5",
+  summary: "Joseph can no longer control himself. He sends everyone out, and weeps so loudly that the Egyptians and Pharaoh's household hear it. 'I am Joseph! Is my father still alive?' His brothers are too dismayed to answer. 'Come near to me, please… I am your brother, Joseph, whom you sold into Egypt. And now do not be distressed or angry with yourselves… for God sent me before you to preserve life.' Three times he says it: it was not you who sent me here, but God.\n\nThere are still five years of famine to come. Joseph tells them to hurry home and bring their father down to live in the land of Goshen, near him, where he will provide for them. He embraces Benjamin and weeps, kisses all his brothers, 'and after that his brothers talked with him'. Pharaoh, delighted, sends wagons to bring the families and promises them the best of Egypt. Joseph sends gifts, five changes of clothes for Benjamin, and a parting word: 'Do not quarrel on the way.' When Jacob hears that Joseph is alive and ruler over Egypt, his heart goes numb; he doesn't believe them. Then he sees the wagons, and his spirit revives: 'It is enough; Joseph my son is still alive. I will go and see him before I die.'",
+  outline: [
+    { ref: "45:1-4", text: "Joseph reveals himself" },
+    { ref: "45:5-15", text: "'God sent me before you to preserve life'" },
+    { ref: "45:16-24", text: "Pharaoh's invitation; wagons and gifts" },
+    { ref: "45:25-28", text: "Jacob's spirit revives" },
+  ],
+  era: "patriarchs",
+  date: { traditional: "c. 1877 BC (two years into the famine, Joseph 39)", scholarly: "Middle Bronze Age", year: -1877 },
+  places: [
+    { id: "egypt", role: "Joseph reveals himself", primary: true },
+    { id: "goshen", role: "Offered as the family's new home" },
+    { id: "hebron", role: "Jacob receives the news" },
+  ],
+  journeys: [{ label: "The brothers carry the news home", path: ["egypt", "hebron"], ref: "45:25" }],
+  people: [
+    { id: "joseph", note: "Reveals himself, forgives freely, and interprets his suffering as God's saving purpose." },
+    { id: "benjamin", note: "Embraced by his brother." },
+    { id: "judah" }, { id: "reuben" },
+    { id: "pharaoh-joseph", note: "Generously invites Jacob's family to the best of Egypt." },
+    { id: "jacob", note: "'It is enough; Joseph my son is still alive.'" },
+  ],
+  context: [
+    { title: "Wagons", body: "Wagons were rare in Canaan's hilly terrain but common in Egypt. Seeing Egyptian wagons, which only an official of Pharaoh could send, convinces Jacob that the impossible news is true." },
+    { title: "Goshen", body: "The eastern Nile Delta was good pastureland and close to Canaan. Egyptian texts describe Semitic herders being allowed to graze there in hard times. Excavations at Tell el-Dab'a (Avaris) show a large Semitic population in this region during the Middle Bronze Age." },
+  ],
+  gospel: [
+    { type: "type", title: "Revealed to the brothers who rejected him", ot: "45:4", nt: ["Luke 24:31", "John 20:16", "Zech 12:10"],
+      body: "The brothers discover that the one they betrayed holds their lives in his hands, and that he loves them. The risen Jesus reveals himself to disciples who had abandoned him, and greets them with 'Peace be with you'. Zechariah foresees Israel looking 'on him whom they have pierced' and mourning." },
+    { type: "theme", title: "God sent me before you to preserve life", ot: "45:5", nt: ["Acts 2:23-24", "Acts 3:14-15", "Rom 8:28"],
+      body: "Joseph doesn't deny that his brothers sold him. He sees God's greater purpose working through their sin. Peter preaches the same about the cross: you killed the Author of life, yet it was 'according to the definite plan and foreknowledge of God'. God turned the worst evil into salvation." },
+    { type: "theme", title: "Come near to me", ot: "45:4", nt: ["Matt 11:28", "Heb 10:19-22", "Eph 2:13"],
+      body: "The brothers expect vengeance and are told to come close. In Christ, 'you who once were far off have been brought near'. The invitation of the gospel is the same: come near." },
+  ],
+  themes: ["revelation", "forgiveness", "providence", "reconciliation", "provision", "hope revived"],
+  questions: [
+    "Joseph's forgiveness was rooted in his view of God's sovereignty. How can trusting God's purposes help you forgive?",
+    "Joseph told his brothers not to be angry with themselves. How does God's forgiveness free us from self-condemnation?",
+    "'Do not quarrel on the way': why might the brothers have been tempted to argue, and what does this say about living as forgiven people?",
+  ],
+  crossrefs: ["Gen 50:19-21", "Acts 7:13-14", "Ps 105:16-23", "Rom 8:28"],
+});

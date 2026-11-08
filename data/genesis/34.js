@@ -1,0 +1,42 @@
+BIBLE.chapter("genesis", 34, {
+  title: "Dinah and the massacre at Shechem",
+  keyVerse: "34:30",
+  summary: "Dinah, Leah's daughter, goes out to see the women of the land. Shechem, son of the local prince Hamor, seizes and rapes her, then says he loves her and wants to marry her. Jacob hears and says nothing until his sons come in from the fields. They are indignant at the outrage done in Israel.\n\nHamor proposes intermarriage, open trade and shared land; Shechem will pay any bride-price. Jacob's sons answer 'deceitfully': only if every male in the city is circumcised. The men of Shechem agree, attracted by the prospect of Jacob's wealth. On the third day, while they are in pain, Simeon and Levi take swords, kill every male, including Hamor and Shechem, and bring Dinah out. The other brothers plunder the city, taking flocks, wealth, women and children. Jacob is horrified, though more for his reputation and safety than for the evil done: 'You have brought trouble on me by making me stink to the inhabitants of the land.' The brothers reply: 'Should he treat our sister like a prostitute?'",
+  outline: [
+    { ref: "34:1-4", text: "Dinah violated by Shechem" },
+    { ref: "34:5-17", text: "Hamor's proposal; the brothers' deceitful condition" },
+    { ref: "34:18-24", text: "The men of Shechem agree to circumcision" },
+    { ref: "34:25-29", text: "Simeon and Levi's massacre; the city plundered" },
+    { ref: "34:30-31", text: "Jacob's rebuke and his sons' retort" },
+  ],
+  era: "patriarchs",
+  date: { traditional: "c. 1900 BC (Dinah probably in her early teens)", scholarly: "Middle Bronze Age", year: -1900 },
+  places: [{ id: "shechem", role: "The Hivite city where Dinah is violated and the men are killed", primary: true }],
+  people: [
+    { id: "dinah", note: "Violated, then silent throughout; others speak and act over her." },
+    { id: "shechem-man", note: "Rapes Dinah, then wants to marry her; killed with his city." },
+    { id: "hamor", note: "Negotiates for his son and for economic advantage." },
+    { id: "jacob", note: "Passive when Dinah is wronged, and focused on his own danger afterwards." },
+    { id: "simeon", note: "Leads the massacre with Levi." },
+    { id: "levi", note: "Leads the massacre with Simeon; later cursed for it (49:5-7)." },
+  ],
+  context: [
+    { title: "A dark chapter", body: "Genesis doesn't soften this story or tell us what to think in a single verdict line. Everyone fails. Shechem commits rape. Hamor sees a business opportunity. Jacob stays silent and later thinks of himself. The brothers abuse the covenant sign of circumcision to commit mass murder. Dinah's own voice is never heard. On his deathbed Jacob finally condemns Simeon and Levi's anger and cruelty (49:5-7)." },
+    { title: "The danger of assimilation", body: "Hamor's offer ('intermarry with us… the land shall be open to you') threatened to dissolve Jacob's family into Canaan within a generation. The brothers rightly saw a threat, but they answered evil with greater evil." },
+  ],
+  gospel: [
+    { type: "theme", title: "Justice without vengeance", ot: "34:25", nt: ["Rom 12:17-21"],
+      body: "Simeon and Levi's outrage at the wrong done to their sister was justified; their slaughter of a whole town was not. 'Repay no one evil for evil… never avenge yourselves, but leave it to the wrath of God.' The cross shows both God's fury at evil and his way of overcoming it." },
+    { type: "theme", title: "A God who sees the silenced", ot: "34:2", nt: ["Ps 10:14", "Luke 7:36-50", "Luke 4:18"],
+      body: "Dinah never speaks, but Scripture records what happened to her. Jesus consistently notices women whom others treat as objects, and announces good news to the oppressed. He also became the ultimate victim of violence to bring justice and healing." },
+    { type: "type", title: "Even Levi was redeemed", ot: "34:25", nt: ["Heb 7:11-17", "Exod 32:26-29"],
+      body: "Levi's violence led to a curse of scattering (49:7). Yet God turned that scattering into a blessing: the Levites became Israel's priests, spread among all the tribes. Grace can redeem even a violent legacy, and the Levitical priesthood would point beyond itself to Christ." },
+  ],
+  themes: ["violence", "justice and revenge", "passivity", "assimilation", "abuse of the sacred", "honesty of Scripture"],
+  questions: [
+    "Why do you think the Bible includes such a disturbing story without an easy moral?",
+    "Jacob's silence and his sons' rage are both failures. What would a godly response to injustice have looked like?",
+    "How should the church respond today to victims of sexual violence?",
+  ],
+  crossrefs: ["Gen 49:5-7", "Deut 22:28-29", "Rom 12:17-21", "Ps 10:14-18"],
+});

@@ -1,0 +1,45 @@
+BIBLE.chapter("genesis", 31, {
+  title: "Jacob flees from Laban",
+  keyVerse: "31:3",
+  summary: "Laban's sons are grumbling and Laban's face has turned cold. The LORD tells Jacob: 'Return to the land of your fathers… and I will be with you.' Jacob calls Rachel and Leah into the field and explains how their father has cheated him and changed his wages ten times, while God made the flocks multiply in his favour. For once the sisters agree: our father has sold us and used up our money; do whatever God has said.\n\nWhile Laban is away shearing sheep, Jacob slips away with his family and flocks, and Rachel secretly steals her father's household gods. Laban pursues and catches up seven days later in the hill country of Gilead, but God warns him in a dream not to harm Jacob. Laban searches the tents for his gods; Rachel sits on them in her camel saddle and claims she can't stand up because 'the way of women' is upon her. Jacob angrily lists twenty years of faithful, unpaid service. The two men make a covenant, pile up a heap of stones as a boundary and witness ('Mizpah': 'the LORD watch between you and me'), and part in peace.",
+  outline: [
+    { ref: "31:1-16", text: "God says go home; Rachel and Leah agree" },
+    { ref: "31:17-21", text: "Jacob's secret departure; Rachel steals the household gods" },
+    { ref: "31:22-35", text: "Laban's pursuit; God's warning; the search" },
+    { ref: "31:36-42", text: "Jacob's complaint: twenty years of hard service" },
+    { ref: "31:43-55", text: "The covenant at Mizpah; Laban goes home" },
+  ],
+  era: "patriarchs",
+  date: { traditional: "c. 1909 BC (after 20 years with Laban)", scholarly: "Middle Bronze Age", year: -1909 },
+  setting: "Jacob crosses the Euphrates and heads south-west into the highlands of Gilead east of the Jordan, about 500 km (300 miles), which Laban covers in seven days of hard riding.",
+  places: [
+    { id: "haran", role: "Jacob leaves while Laban is away shearing" },
+    { id: "euphrates", role: "Jacob 'crossed the River'" },
+    { id: "gilead", role: "Laban overtakes Jacob in the hill country of Gilead", primary: true },
+    { id: "mizpah-gilead", role: "The heap of witness: 'The LORD watch between you and me'" },
+  ],
+  journeys: [{ label: "Jacob heads home", path: ["haran", "mizpah-gilead"], ref: "31:17-21" }],
+  people: [
+    { id: "jacob", note: "Obeys God's call home; finally speaks up after twenty years of exploitation." },
+    { id: "rachel", note: "Steals her father's household gods and hides them by deception." },
+    { id: "leah", note: "Agrees with her sister for once." },
+    { id: "laban", note: "Pursues in anger, is restrained by God, and settles for a treaty." },
+  ],
+  context: [
+    { title: "Household gods (teraphim)", body: "Teraphim were small figurines of household deities. Some Nuzi texts link possession of the family gods with leadership of the family and possibly inheritance rights, which may explain Laban's frantic search. Rachel may also simply have clung to her old religion. Either way, Genesis mocks them: they are so impotent that a woman sits on them." },
+    { title: "Boundary treaties", body: "The heap of stones (Galeed in Hebrew, Jegar-sahadutha in Aramaic, each meaning 'heap of witness') resembles ancient boundary markers that invoked gods as witnesses. It marks a border between Aramean and Israelite territory, which later generations would fight over in Gilead." },
+  ],
+  gospel: [
+    { type: "theme", title: "God protects his people", ot: "31:24", nt: ["Rom 8:31", "John 10:28-29"],
+      body: "God warns Laban in a dream: 'Be careful not to say anything to Jacob, either good or bad.' Jacob's safety rests not on his cleverness but on God's covering. 'If God is for us, who can be against us?'" },
+    { type: "theme", title: "Leaving behind the old gods", ot: "31:19", nt: ["1 Thess 1:9", "1 John 5:21"],
+      body: "Rachel carries her father's idols into the land of promise. Later Jacob has his household bury their foreign gods (35:2-4). The gospel calls people to turn 'to God from idols to serve the living and true God'." },
+  ],
+  themes: ["God's call", "injustice", "integrity at work", "idolatry", "covenant", "protection"],
+  questions: [
+    "Jacob served faithfully under an unfair boss for twenty years. How does God see your work when you are treated unfairly?",
+    "Rachel smuggled idols into her new life. What 'old gods' do Christians sometimes bring with them?",
+    "What does 31:42 ('If the God of my father… had not been on my side…') teach about where Jacob's success really came from?",
+  ],
+  crossrefs: ["Col 3:22-24", "Ps 124", "Gen 35:2-4", "Josh 24:14-15"],
+});
