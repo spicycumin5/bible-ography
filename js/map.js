@@ -30,8 +30,9 @@
     const ink = css.getPropertyValue("--rubric").trim() || "#a33";
     const lapis = css.getPropertyValue("--lapis").trim() || "#235";
     const still = opts.static === true;   // tile previews: no panning, zooming or popups
+    const stage = opts.stage === true;   // full-window backdrop: wheel zoom on, no +/- buttons
     const map = L.map(el, {
-      zoomControl: !still, scrollWheelZoom: false, attributionControl: !still,
+      zoomControl: !still && !stage, scrollWheelZoom: stage, attributionControl: !still,
       dragging: !still, doubleClickZoom: !still, boxZoom: !still, keyboard: !still, touchZoom: !still,
       minZoom: 3, maxZoom: 8, worldCopyJump: false,
     });
@@ -40,7 +41,7 @@
       maxZoom: 8, className: "tiles",
       attribution: "Relief © Esri, US National Park Service",
     }).addTo(map);
-    if (!still) el.addEventListener("click", () => map.scrollWheelZoom.enable(), { once: true });
+    if (!still && !stage) el.addEventListener("click", () => map.scrollWheelZoom.enable(), { once: true });
 
     const pts = [];
     for (const item of opts.places || []) {
@@ -115,8 +116,13 @@
       }
     });
 
-    if (pts.length === 1) map.setView(pts[0], opts.zoom || 6);
-    else if (pts.length) map.fitBounds(L.latLngBounds(pts).pad(0.25), { maxZoom: opts.maxFitZoom || 8 });
+    // padding keeps pins clear of overlays: { tl: [left, top], br: [right, bottom] } in pixels
+    const pad = opts.padding ? { paddingTopLeft: opts.padding.tl, paddingBottomRight: opts.padding.br } : {};
+    if (pts.length === 1) {
+      if (opts.padding) map.fitBounds(L.latLngBounds([pts[0], pts[0]]).pad(0.5), Object.assign({ maxZoom: opts.zoom || 7 }, pad));
+      else map.setView(pts[0], opts.zoom || 6);
+    } else if (pts.length) map.fitBounds(L.latLngBounds(pts).pad(0.2), Object.assign({ maxZoom: opts.maxFitZoom || 8 }, pad));
+    else if (opts.padding) map.fitBounds(L.latLngBounds([[24, 28], [40, 50]]), pad);
     else map.setView([31.5, 38], 4);
     setTimeout(() => map.invalidateSize(), 50);
     return map;

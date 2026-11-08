@@ -6,7 +6,13 @@ A chapter-by-chapter companion for reading the Bible. Each chapter guide has its
 
 Double-click `index.html`. It runs straight from the folder with no install and no server. It needs an internet connection for the fonts, the map tiles, and the two libraries (Leaflet for maps, D3 for trees).
 
-Each chapter opens as a single screen of visual tiles: map, family, timeline, people, story threads, Hebrew words and connections to Christ. Click any tile, or "The story", "Background" or "Reflect", to open the full detail in a side drawer. The drawer has a tab for every section, and only the drawer scrolls.
+Each chapter opens as one full-window landscape. The chapter's land, a relief map with its places and journeys, fills the screen and everything else rests on its faded edges:
+- the title at top-left;
+- the family tree and people on the left;
+- the Hebrew words, story threads and links to Christ on the right;
+- the timeline along the bottom like a horizon.
+
+Scroll to zoom the map and drag to pan. Click anything, or "The story", "Background" or "Reflect", to open the full detail in a side drawer with a tab for every section. The Genesis overview works the same way, with the 50 chapters as a ribbon along the bottom.
 
 Use the left and right arrow keys to move between chapters. If the drawer is open, it stays on the same tab, so you can follow one thing (say, the Words) through the book. Esc closes the drawer. Verse references open on BibleGateway in the translation picked in the header.
 

@@ -175,6 +175,22 @@
     }));
   }
 
+  /* Pixels of the map hidden under the stage's side columns, title and horizon, so pins are framed in the clear middle. */
+  function stagePadding() {
+    if (innerWidth < 900) return { tl: [20, 20], br: [20, 20] };
+    const side = Math.min(380, innerWidth * 0.26);
+    return { tl: [side, 150], br: [side, 130] };
+  }
+
+  /* Place the left column just below the title, whatever height the title wraps to. */
+  function layoutStage() {
+    const st = document.querySelector(".stage"), t = st && st.querySelector(".st-title"), l = st && st.querySelector(".st-left");
+    if (!t || !l) return;
+    if (innerWidth < 900 || innerHeight < 600) { l.style.top = ""; return; }
+    l.style.top = (t.offsetTop + t.offsetHeight + 18) + "px";
+  }
+  window.addEventListener("resize", () => { clearTimeout(layoutStage.t); layoutStage.t = setTimeout(layoutStage, 120); });
+
   function setHeadHeight() {
     const h = document.querySelector(".site-head");
     if (h) document.documentElement.style.setProperty("--head", h.offsetHeight + "px");
@@ -222,37 +238,47 @@
         '<div class="tl dr-tl-' + i + '"></div>').join(""),
       after: b => { info.timeline.forEach((t, i) => BIBLE.timeline.lifespans(b.querySelector(".dr-tl-" + i), t)); } });
 
-    /* tiles */
+    /* ----- the stage: every place in the book is the backdrop ----- */
     const chain = ["adam", "noah", "abraham", "isaac", "jacob"].filter(id => person(id));
-    const tiles = [
-      sections.length && { id: "structure", open: "structure", label: "Four movements", weight: 1,
-        html: '<ol class="t-structure">' + sections.map((s, i) => '<li class="s' + (i % 4) + '" style="--w:' + (s.to - s.from + 1) + '"><span>' + esc(s.short || s.title) + "</span><em>" + s.from + "–" + s.to + "</em></li>").join("") + "</ol>" },
-      info.gospel && { id: "christ", open: "gospel", label: "The gospel thread", weight: 1,
-        html: '<ul class="t-list">' + info.gospel.slice(0, 5).map(g => '<li><span class="dia"></span>' + esc(g.title) + "</li>").join("") + "</ul>" },
-      { id: "map", open: "places", label: Object.keys(allPlaces).length + " places", weight: 1, html: '<div class="t-viz" id="g-map"></div>' },
-      info.lineage && { id: "family", open: "family", label: "Family line", weight: 1,
-        html: '<ol class="t-chain">' + chain.map(id => "<li>" + esc(pname(id)) + "</li>").join("") + "<li>12 tribes</li></ol>" },
-      info.timeline && { id: "life", open: "lifespans", label: "Lifespans", weight: 1, html: '<div class="t-viz" id="g-life"></div>' },
-    ].filter(Boolean);
+    const ribbon = Array.from({ length: book.chapters }, (_, i) => {
+      const n = i + 1, k = book.id + "/" + n, c = BIBLE.chapters[k], s = sectionOf(n);
+      return '<li class="s' + (s ? sections.indexOf(s) % 4 : 0) + '"><a href="#/' + k + '" data-n="' + n + '" data-t="' + esc(c ? c.title : "") + '" data-g="' + esc(BIBLE.taglinesMap[k] || "") + '">' +
+        "<span>" + n + "</span></a></li>";
+    }).join("");
 
-    view().innerHTML = '<div class="glance book-glance">' +
-      '<header class="g-hero">' +
-        '<div class="g-head"><p class="ch-book">' + (book.testament === "OT" ? "Old Testament" : "New Testament") + ", " + esc(book.genre) + "</p>" +
-          '<h1 class="book-title">' + esc(book.name) + "</h1>" + (info.subtitle ? '<p class="g-tag">' + esc(info.subtitle) + "</p>" : "") + "</div>" +
-        '<div class="g-actions"><button type="button" class="pill-btn" data-open="overview">About the book</button>' +
-          (sections.length ? '<span class="sec-key">' + sections.map((s, i) => '<span><span class="key s' + (i % 4) + '"></span>' + esc(s.short || s.title) + "</span>").join("") + "</span>" : "") + "</div>" +
+    view().innerHTML = '<div class="stage book-stage">' +
+      '<div class="st-map" id="st-map"></div><div class="st-fade" aria-hidden="true"></div>' +
+      '<header class="st-title">' +
+        '<p class="ch-book">' + (book.testament === "OT" ? "Old Testament" : "New Testament") + ", " + esc(book.genre) + "</p>" +
+        '<h1 class="book-title">' + esc(book.name) + "</h1>" + (info.subtitle ? '<p class="g-tag">' + esc(info.subtitle) + "</p>" : "") +
+        '<p class="st-actions"><button type="button" class="pill-btn primary" data-open="overview">About the book</button>' +
+          '<button type="button" class="pill-btn" data-open="places">' + Object.keys(allPlaces).length + " places</button>" +
+          (info.timeline ? '<button type="button" class="pill-btn" data-open="lifespans">Lifespans</button>' : "") + "</p>" +
       "</header>" +
-      '<ol class="ch-grid">' + grid + "</ol>" +
-      '<div class="g-grid g-book">' + tileRow(tiles, tiles.length) + "</div>" +
+      '<aside class="st-left">' +
+        (sections.length ? '<button type="button" class="st-block" data-open="structure"><span class="st-label">Four movements</span>' +
+          '<ol class="st-moves">' + sections.map((s, i) => '<li class="s' + (i % 4) + '"><span class="mv">' + esc(s.short || s.title) + "</span><em>" + s.from + "–" + s.to + "</em></li>").join("") + "</ol></button>" : "") +
+        (info.lineage ? '<button type="button" class="st-block" data-open="family"><span class="st-label">The family line</span>' +
+          '<ol class="t-chain">' + chain.map(id => "<li>" + esc(pname(id)) + "</li>").join("") + "<li>12 tribes</li></ol></button>" : "") +
+      "</aside>" +
+      (info.gospel ? '<aside class="st-right"><button type="button" class="st-block" data-open="gospel"><span class="st-label">The gospel thread</span>' +
+        '<ul class="t-list">' + info.gospel.map(g => '<li><span class="dia"></span>' + esc(g.title) + "</li>").join("") + "</ul></button></aside>" : "") +
+      '<footer class="st-horizon st-ribbon-wrap">' +
+        '<p class="st-hover" id="st-hover"><span class="hv-n">Choose a chapter</span><span class="hv-t"></span></p>' +
+        '<ol class="st-ribbon">' + ribbon + "</ol>" +
+      "</footer>" +
     "</div>";
 
     setHeadHeight();
+    layoutStage();
     wireTiles(view());
-    BIBLE.map.render($("#g-map"), { places: Object.values(allPlaces), static: true, labels: false, maxFitZoom: 4, ignoreRegionsInFit: true });
-    if (info.timeline && $("#g-life")) {
-      BIBLE.timeline.lifespans($("#g-life"), Object.assign({}, info.timeline[0], { events: false }));
-      const s = $("#g-life svg"); if (s) { s.setAttribute("height", "100%"); s.setAttribute("preserveAspectRatio", "xMidYMid meet"); }
-    }
+    const hv = $("#st-hover");
+    view().querySelectorAll(".st-ribbon a").forEach(a => {
+      const show = () => { hv.querySelector(".hv-n").textContent = book.name + " " + a.dataset.n + ": " + a.dataset.t; hv.querySelector(".hv-t").textContent = a.dataset.g; };
+      a.addEventListener("mouseenter", show); a.addEventListener("focus", show);
+    });
+    BIBLE.map.render($("#st-map"), { places: Object.values(allPlaces), stage: true, labels: false, maxFitZoom: 5, ignoreRegionsInFit: true, padding: stagePadding() });
+
     BIBLE.drawer.setup(secs, { base: "#/" + book.id, label: book.name });
     if (sectionId) BIBLE.drawer.open(sectionId, { silent: true });
   }
@@ -353,71 +379,67 @@
       ((c.crossrefs || []).length ? '<p class="xrefs"><span class="seen-l">Read alongside</span>' + c.crossrefs.map(r => R.link(r, book.id)).join("") + "</p>" : ""));
     const has = id => secs.some(s => s.id === id);
 
-    /* ----- glance tiles ----- */
+    /* ----- the stage: the chapter's land is the backdrop, everything else rests on it ----- */
     const journey = (c.journeys || [])[0];
-    const placeNames = (c.places || []).map(p => BIBLE.places[p.id]).filter(p => p && p.type !== "region").map(p => p.name.replace(/\s*\(.*\)/, ""));
-    const mapCap = journey ? journey.path.map(id => (BIBLE.places[id] || { name: id }).name.replace(/\s*\(.*\)/, "")).join(" → ")
-      : placeNames.slice(0, 3).join(", ") + (placeNames.length > 3 ? " +" + (placeNames.length - 3) : "");
+    const clean = name => name.replace(/\s*\(.*\)/, "");
+    const placeNames = (c.places || []).map(p => BIBLE.places[p.id]).filter(p => p && p.type !== "region").map(p => clean(p.name));
+    const settingCap = journey ? journey.path.map(id => clean((BIBLE.places[id] || { name: id }).name)).join(" → ")
+      : placeNames.length ? placeNames.slice(0, 3).join(", ") + (placeNames.length > 3 ? " +" + (placeNames.length - 3) : "")
+      : "No specific places are named in this chapter";
     const ppl = (c.people || []).map(p => person(p.id)).filter(Boolean);
-    const shown = ppl.slice(0, 8);
-
-    const top = [
-      has("setting") && { id: "map", open: "setting", label: "Setting", weight: 2,
-        html: '<div class="t-viz" id="g-map"></div><span class="t-cap">' + esc(mapCap) + "</span>" },
-      has("family") && { id: "family", open: "family", label: "Family", weight: 1,
-        html: '<div class="t-viz" id="g-tree"></div><span class="t-cap">' + esc(c.lineage.title || "Family tree") + "</span>" },
-      { id: "when", open: "when", label: "When", weight: 1,
-        html: '<span class="t-big">' + esc(shortDate(d) || era.name || "") + '</span><span class="t-sub">' + esc(era.name || "") + '</span><div class="t-viz t-life" id="g-life"></div><div class="t-viz t-era" id="g-era"></div>' },
-    ].filter(Boolean);
-    const bottom = [
-      has("people") && { id: "people", open: "people", label: "People", weight: 1,
-        html: '<ul class="t-avatars">' + shown.map(p => '<li class="' + (p.promise ? "promise" : "") + (p.sex === "f" ? " f" : "") + '"><span class="av" aria-hidden="true">' + esc(initials(p.name)) + "</span><span class=\"nm\">" + esc(p.name) + "</span></li>").join("") +
-          (ppl.length > shown.length ? '<li class="more"><span class="av">+' + (ppl.length - shown.length) + '</span><span class="nm">more</span></li>' : "") + "</ul>" },
-      has("threads") && { id: "threads", open: "threads", label: "Story threads", weight: 1,
-        html: '<ul class="t-pills">' + study.threads.map(t => '<li title="' + esc(t.note) + '">' + esc((BIBLE.threads[t.id] || {}).short || t.id) + "</li>").join("") + "</ul>" },
-      has("words") && { id: "words", open: "words", label: "Words behind the English", weight: 1,
-        html: '<ul class="t-words">' + study.words.slice(0, 4).map(it => { const w = BIBLE.words[it.id]; return w ? "<li>" + '<span class="script ' + w.lang + '" lang="he" dir="rtl">' + esc(w.lemma) + '</span><span class="tl">' + esc(w.translit) + '</span><span class="wg">' + esc(firstGloss(w.gloss)) + "</span></li>" : ""; }).join("") + "</ul>" },
-      has("christ") && { id: "christ", open: "christ", label: "Pointing to Christ", weight: 1,
-        html: '<ul class="t-list">' + c.gospel.slice(0, 4).map(g => '<li class="g-' + (g.type || "theme") + '"><span class="dia"></span>' + esc(g.title) + "</li>").join("") + "</ul>" },
-    ].filter(Boolean);
-
+    const shown = ppl.slice(0, 9);
+    const avatars = '<ul class="t-avatars">' + shown.map(p => '<li class="' + (p.promise ? "promise" : "") + (p.sex === "f" ? " f" : "") + '"><span class="av" aria-hidden="true">' + esc(initials(p.name)) + '</span><span class="nm">' + esc(p.name) + "</span></li>").join("") +
+      (ppl.length > shown.length ? '<li class="more"><span class="av">+' + (ppl.length - shown.length) + '</span><span class="nm">more</span></li>' : "") + "</ul>";
+    const weave = '<svg class="weave" viewBox="0 0 30 10" aria-hidden="true"><path d="M0 5 Q 3.75 0 7.5 5 T 15 5 T 22.5 5 T 30 5"/></svg>';
     const tagline = BIBLE.taglinesMap[key] || "";
-    view().innerHTML = '<div class="glance">' + nav +
-      '<header class="g-hero">' +
+
+    view().innerHTML = '<div class="stage">' +
+      '<div class="st-map" id="st-map"></div><div class="st-fade" aria-hidden="true"></div>' +
+      nav.replace('class="ch-nav"', 'class="ch-nav st-nav"') +
+      '<header class="st-title">' +
         '<div class="initial sm" aria-hidden="true"><span>' + n + "</span></div>" +
         '<div class="g-head">' +
           '<p class="ch-book"><a href="#/' + book.id + '">' + esc(book.name) + "</a> " + n + (sec ? '<span class="ch-sec">' + esc(sec.short || sec.title) + "</span>" : "") + "</p>" +
           "<h1>" + esc(c.title) + "</h1>" +
           (tagline ? '<p class="g-tag">' + esc(tagline) + "</p>" : "") +
-        "</div>" +
-        '<div class="g-actions">' +
-          '<button type="button" class="pill-btn primary" data-open="story">The story</button>' +
-          (has("background") ? '<button type="button" class="pill-btn" data-open="background">Background</button>' : "") +
-          '<button type="button" class="pill-btn" data-open="reflect">Reflect</button>' +
-          (c.keyVerse ? '<span class="g-key">Key passage ' + R.link(c.keyVerse, book.id) + "</span>" : "") +
+          '<p class="st-actions"><button type="button" class="pill-btn primary" data-open="story">The story</button>' +
+            (has("background") ? '<button type="button" class="pill-btn" data-open="background">Background</button>' : "") +
+            '<button type="button" class="pill-btn" data-open="reflect">Reflect</button></p>' +
+          (c.keyVerse ? '<p class="g-key">Key passage ' + R.link(c.keyVerse, book.id) + "</p>" : "") +
         "</div>" +
       "</header>" +
-      '<div class="g-grid">' + tileRow(top, 4) + tileRow(bottom, 4) + "</div>" +
+      '<aside class="st-left">' +
+        (has("family") ? '<button type="button" class="st-block st-tree" data-open="family"><span class="st-label">' + esc(c.lineage.title || "Family") + '</span><div class="st-viz" id="st-tree"></div></button>' : "") +
+        (has("people") ? '<button type="button" class="st-block" data-open="people"><span class="st-label">People</span>' + avatars + "</button>" : "") +
+      "</aside>" +
+      '<aside class="st-right">' +
+        (has("words") ? '<button type="button" class="st-block" data-open="words"><span class="st-label">Words behind the English</span><ul class="st-words">' +
+          study.words.slice(0, 4).map(it => { const w = BIBLE.words[it.id]; return w ? '<li><span class="script ' + w.lang + '" lang="he" dir="rtl">' + esc(w.lemma) + '</span><span class="wt"><span class="tl">' + esc(w.translit) + '</span><span class="wg">' + esc(firstGloss(w.gloss)) + "</span></span></li>" : ""; }).join("") +
+          "</ul></button>" : "") +
+        (has("threads") ? '<button type="button" class="st-block" data-open="threads"><span class="st-label">Story threads</span><ul class="st-threads">' +
+          study.threads.map(t => '<li title="' + esc(t.note) + '">' + weave + esc((BIBLE.threads[t.id] || {}).short || t.id) + "</li>").join("") + "</ul></button>" : "") +
+        (has("christ") ? '<button type="button" class="st-block" data-open="christ"><span class="st-label">Pointing to Christ</span><ul class="t-list">' +
+          c.gospel.map(g => '<li class="g-' + (g.type || "theme") + '"><span class="dia"></span>' + esc(g.title) + "</li>").join("") + "</ul></button>" : "") +
+      "</aside>" +
+      '<button type="button" class="st-setting" data-open="' + (has("setting") ? "setting" : "story") + '"><span class="st-label">Setting</span><span class="st-cap">' + esc(settingCap) + "</span></button>" +
+      '<button type="button" class="st-horizon" data-open="when">' +
+        '<span class="hz-date"><span class="t-big">' + esc(shortDate(d) || era.name || "") + '</span><span class="t-sub">' + esc(era.name || "") + "</span></span>" +
+        '<span class="st-viz hz-era" id="st-era"></span>' +
+      "</button>" +
     "</div>";
 
     setHeadHeight();
-    wireNav(book, keep);
+    layoutStage();
+    wireNav(book);
     wireTiles(view());
 
-    if ($("#g-map")) BIBLE.map.render($("#g-map"), { places: c.places, journeys: c.journeys, static: true, labels: (c.places || []).length <= 6 });
-    if ($("#g-tree")) {
+    BIBLE.map.render($("#st-map"), { places: c.places, journeys: c.journeys, stage: true, labels: true, padding: stagePadding() });
+    if ($("#st-tree")) {
       const big = BIBLE.lineage.size(c.lineage) > 16;
       const hl = c.lineage.highlight || c.lineage.include || [];
-      BIBLE.lineage.render($("#g-tree"), Object.assign({}, c.lineage, big && hl.length ? { include: hl } : {}, { fit: true }));
+      BIBLE.lineage.render($("#st-tree"), Object.assign({}, c.lineage, big && hl.length ? { include: hl } : {}, { fit: true }));
     }
-    BIBLE.timeline.eraStrip($("#g-era"), { eraId: c.era, year: d.year });
-    const gl = $("#g-life");
-    if (gl) {
-      BIBLE.timeline.lifespans(gl, Object.assign({}, lifeOpts, { events: false, markLabel: " " }));
-      const sv = gl.querySelector("svg");
-      if (sv) { sv.setAttribute("height", "100%"); sv.setAttribute("preserveAspectRatio", "xMinYMid meet"); }
-      else gl.remove();
-    }
+    BIBLE.timeline.eraStrip($("#st-era"), { eraId: c.era, year: d.year, label: book.abbr[0] + " " + n });
 
     BIBLE.drawer.setup(secs, { base: "#/" + key, label: book.name + " " + n + ": " + c.title });
     if (sectionId) BIBLE.drawer.open(sectionId, { silent: true, keepFocus: true });
@@ -547,7 +569,7 @@
     const isChapter = parts[1] && /^\d+$/.test(parts[1]);
     const pageKey = BIBLE.getBook(parts[0]) ? parts.slice(0, isChapter ? 2 : 1).join("/") : parts.join("/");
     const sectionId = BIBLE.getBook(parts[0]) ? parts[isChapter ? 2 : 1] : null;
-    if (pageKey === renderedPage && document.querySelector(".glance")) {
+    if (pageKey === renderedPage && document.querySelector(".glance, .stage")) {
       if (sectionId) BIBLE.drawer.open(sectionId, { silent: true }); else BIBLE.drawer.close();
       return;
     }

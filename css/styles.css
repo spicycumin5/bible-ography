@@ -696,3 +696,126 @@ body.dr-open { overflow: hidden; }
 .book-glance .g-hero { grid-template-columns: minmax(0, 1fr) auto; }
 .t-viz .region-label { display: none; }
 @media (max-width: 899px) { .book-glance .g-hero { grid-template-columns: 1fr; } }
+
+/* =================== The stage: the land as backdrop =================== */
+body:has(.stage) .site-head { max-width: none; padding-left: 28px; padding-right: 28px; }
+body:has(.stage) .site-foot { display: none; }
+main:has(> .stage) { max-width: none; padding: 0; }
+
+.stage {
+  --veil: color-mix(in srgb, var(--page) 90%, transparent);
+  --veil-soft: color-mix(in srgb, var(--page) 55%, transparent);
+  position: relative; height: calc(100vh - var(--head, 60px)); min-height: 560px; overflow: hidden;
+  isolation: isolate;
+}
+.st-map { position: absolute; inset: 0; z-index: 0; background: var(--panel); }
+.st-map.leaflet-container { background: var(--panel); }
+/* the edges of the land dissolve into vellum, which is what the text sits on */
+.st-fade {
+  position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--veil) 0, var(--veil) 17%, var(--veil-soft) 25%, transparent 33%, transparent 67%, var(--veil-soft) 75%, var(--veil) 83%, var(--veil) 100%),
+    linear-gradient(180deg, var(--veil-soft) 0, transparent 22%, transparent 78%, var(--veil) 100%);
+}
+.stage > :not(.st-map):not(.st-fade) { position: absolute; z-index: 2; }
+
+/* chapter navigation floats top-centre */
+.st-nav { top: 12px; left: 50%; transform: translateX(-50%); width: min(560px, 46vw); border: 0; padding: 0;
+  background: var(--veil); border-radius: 999px; padding: 4px 16px; box-shadow: 0 1px 0 var(--rule); }
+.st-nav .pn { min-width: 0; white-space: nowrap; }
+.st-nav .ch-pick select { max-width: 260px; background: transparent; border-color: transparent; text-align: center; }
+
+/* title, top-left */
+.st-title { top: 18px; left: 28px; width: min(470px, 34vw); display: grid; grid-template-columns: auto 1fr; gap: 18px; align-items: start; }
+.st-title .initial.sm { margin-top: 10px; }
+.st-title h1 { font-size: clamp(1.9rem, 2.7vw, 2.8rem); line-height: 1.04; }
+.book-stage .st-title { grid-template-columns: 1fr; }
+.book-stage .st-title .book-title { font-size: clamp(3rem, 5.5vw, 5rem); }
+.st-actions { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; }
+.st-title .g-key { text-align: left; margin: 2px 0 0; }
+
+/* side columns: plain content on the faded edges, no boxes */
+.st-left { top: 236px; left: 28px; bottom: 112px; width: min(330px, 24vw); display: flex; flex-direction: column; gap: 14px; }
+.book-stage .st-left { top: 250px; }
+.st-right { top: 70px; right: 28px; bottom: 112px; width: min(330px, 24vw); display: flex; flex-direction: column; gap: 16px; overflow: hidden; }
+.st-block {
+  display: flex; flex-direction: column; text-align: left; min-height: 0;
+  font: inherit; color: inherit; background: none; border: 0; padding: 6px 8px 8px; margin: 0 -8px; border-radius: 6px; cursor: pointer;
+  transition: background-color 0.15s;
+}
+.st-block:hover { background: color-mix(in srgb, var(--panel) 70%, transparent); }
+.st-block:focus-visible { outline: 2px solid var(--gold); outline-offset: 1px; }
+.st-label { display: flex; align-items: baseline; gap: 10px; font-family: "IM Fell English", serif; font-size: 1.12rem; color: var(--rubric); margin-bottom: 6px; }
+.st-label::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--gold), transparent); opacity: 0.6; }
+.st-tree { flex: 1 1 auto; }
+.st-viz { display: block; position: relative; flex: 1; min-height: 120px; pointer-events: none; }
+#st-tree svg.tree { width: 100%; height: 100%; position: absolute; inset: 0; }
+#st-tree .node .sub { display: none; }
+#st-tree .node .nm { stroke: var(--page); }
+.st-left .t-avatars { grid-template-columns: repeat(auto-fill, minmax(58px, 1fr)); }
+.st-left .t-avatars .promise .av { box-shadow: 0 0 0 2px var(--page), 0 0 0 3px var(--gold); }
+
+.st-words { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.st-words li { display: grid; grid-template-columns: 4.2em 1fr; gap: 12px; align-items: center; }
+.st-words .script.he { font-size: 1.75em; text-align: right; }
+.st-words .wt { display: flex; flex-direction: column; line-height: 1.2; }
+.st-words .tl { font-size: 1rem; }
+.st-words .wg { font-size: 0.86rem; color: var(--ink-2); }
+.st-threads { list-style: none; margin: 0; padding: 0; display: grid; gap: 5px; }
+.st-threads li { display: flex; align-items: center; gap: 10px; font-size: 0.96rem; }
+.weave { width: 30px; height: 10px; flex: none; }
+.weave path { fill: none; stroke: var(--gold); stroke-width: 1.6; stroke-linecap: round; }
+.st-right .t-list li { font-size: 0.95rem; }
+
+/* setting caption, bottom-centre above the horizon */
+.st-setting { bottom: 104px; left: 50%; transform: translateX(-50%); max-width: 40vw; text-align: center;
+  font: inherit; color: inherit; background: var(--veil); border: 0; border-radius: 999px; padding: 5px 16px 6px; cursor: pointer;
+  display: flex; gap: 10px; align-items: baseline; box-shadow: 0 1px 0 var(--rule); }
+.st-setting .st-label { margin: 0; font-size: 1rem; }
+.st-setting .st-label::after { display: none; }
+.st-cap { font-size: 0.92rem; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.st-setting:hover { box-shadow: 0 0 0 1px var(--gold); }
+
+/* the horizon: time along the bottom edge */
+.st-horizon { left: 0; right: 0; bottom: 0; height: 96px; display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center;
+  padding: 6px 28px 8px; font: inherit; color: inherit; text-align: left; border: 0; border-top: 1px solid color-mix(in srgb, var(--gold) 55%, transparent);
+  background: var(--veil); cursor: pointer; }
+.st-horizon:hover { background: color-mix(in srgb, var(--page) 96%, transparent); }
+.hz-date { display: flex; flex-direction: column; min-width: 150px; }
+.hz-era { min-height: 74px; }
+.hz-era svg { width: 100%; }
+
+/* book: chapter ribbon as the horizon */
+.st-ribbon-wrap { display: block; height: 108px; cursor: default; }
+.st-hover { margin: 0 0 6px; display: flex; gap: 14px; align-items: baseline; min-height: 1.5em; white-space: nowrap; overflow: hidden; }
+.st-hover .hv-n { font-family: "IM Fell English", serif; font-size: 1.15rem; }
+.st-hover .hv-t { font-style: italic; color: var(--ink-2); font-size: 0.95rem; overflow: hidden; text-overflow: ellipsis; }
+.st-ribbon { list-style: none; margin: 0; padding: 0; display: flex; gap: 2px; height: 52px; }
+.st-ribbon li { flex: 1; min-width: 0; }
+.st-ribbon a { display: flex; align-items: flex-end; justify-content: center; height: 100%; text-decoration: none; color: var(--ink-2);
+  border-top: 4px solid var(--sec); background: color-mix(in srgb, var(--panel) 80%, transparent); font-size: 0.78rem; padding-bottom: 6px; transition: background-color 0.12s, color 0.12s; }
+.st-ribbon a:hover, .st-ribbon a:focus-visible { background: var(--sec); color: #fff; outline: none; }
+.st-moves { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.st-moves li { display: flex; justify-content: space-between; gap: 8px; border-left: 4px solid var(--sec); padding: 2px 8px; font-size: 0.98rem; }
+.st-moves em { color: var(--muted); font-size: 0.82rem; }
+
+/* narrow or short windows: the stage unstacks into a flowing page */
+@media (max-width: 899px), (max-height: 599px) {
+  .stage { height: auto; min-height: 0; display: flex; flex-direction: column; gap: 14px; padding: 0 16px 24px; overflow: visible; }
+  .st-fade { display: none; }
+  .stage > :not(.st-map):not(.st-fade) { position: static; transform: none; width: auto; max-width: none; }
+  .st-map { position: relative; height: 46vh; min-height: 260px; margin: 0 -16px; order: 3; }
+  .st-nav { order: 1; border-radius: 0; box-shadow: none; background: none; padding: 8px 0; border-bottom: 1px solid var(--rule-2); }
+  .st-title { order: 2; }
+  .st-setting { order: 4; align-self: flex-start; }
+  .st-horizon { order: 5; height: auto; grid-template-columns: 1fr; gap: 6px; padding: 10px 0; background: none; }
+  .st-ribbon-wrap { height: auto; }
+  .st-left { order: 6; } .st-right { order: 7; }
+  .st-left, .st-right { overflow: visible; }
+  .st-tree .st-viz { min-height: 200px; }
+  .st-ribbon { flex-wrap: wrap; height: auto; }
+  .st-ribbon li { flex: 0 0 calc(10% - 2px); }
+  .st-ribbon a { height: 34px; }
+}
+:root[data-theme="dark"] .t-avatars .f .av { color: #1d1030; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .t-avatars .f .av { color: #1d1030; } }
