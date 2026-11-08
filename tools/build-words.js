@@ -1,0 +1,110 @@
+/* Generates word occurrence data from STEPBible's tagged Hebrew and Greek texts (CC BY 4.0, STEPBible.org).
+   Input:  tools/sources/stepbible/TAHOT*.txt and TAGNT*.txt  (download from github.com/STEPBible/STEPBible-Data,
+           folder "Translators Amalgamated OT+NT")
+   Output: data/word-stats.js          counts per book + the most common glosses, for every word in data/words.js
+           data/word-refs/<id>.js      every verse where the word occurs, loaded on the word's page
+   Run:    node tools/build-words.js
+
+   Counting rules: Hebrew counts words in the Leningrad Codex text (types L*) and its marginal readings (Q*);
+   Greek counts words printed in the Nestle-Aland text (types containing N). References use English versification. */
+const fs = require("fs");
+const path = require("path");
+const root = path.join(__dirname, "..");
+const src = path.join(__dirname, "sources", "stepbible");
+global.window = global;
+const load = f => (0, eval)(fs.readFileSync(path.join(root, f), "utf8"));
+["js/core.js", "data/books.js", "data/words.js"].forEach(load);
+
+// Strong's number -> word ids (a word may list several numbers; base numbers match all of STEPBible's sense letters)
+const byTag = {};
+for (const w of Object.values(BIBLE.words)) for (const s of w.strongs) (byTag[s] = byTag[s] || []).push(w.id);
+const match = tag => {
+  const exact = byTag[tag] || [];
+  const base = tag.replace(/[A-Z]$/, "");
+  const loose = base !== tag ? byTag[base] || [] : [];
+  return [...new Set([...exact, ...loose])];
+};
+
+const files = fs.readdirSync(src).filter(f => /^TA[HG][NO]T .*\.txt$/.test(f));
+const order = ["TAHOT Gen", "TAHOT Jos", "TAHOT Job", "TAHOT Isa", "TAGNT Mat", "TAGNT Act"];
+files.sort((a, b) => order.findIndex(o => a.startsWith(o)) - order.findIndex(o => b.startsWith(o)));
+if (files.length !== 6) { console.error("Expected 6 STEPBible files in " + src + ", found " + files.length); process.exit(1); }
+
+const codes = [];              // STEPBible book codes in canonical order
+const refs = {};               // id -> bookCode -> Set("c:v")
+const glosses = {};            // id -> gloss -> n
+const occ = {};                // id -> bookCode -> occurrences (a word can occur twice in one verse)
+const lineRe = /^([0-9A-Za-z]+)\.(\d+)\.(\d+)[^#\t]*#\d+=([A-Za-z()]+)\t/;
+
+const clean = g => {
+  let t = g.replace(/\[|\]|<|>|\(|\)|\?/g, "").replace(/[-.,;:!]+/g, " ").toLowerCase().replace(/\s+/g, " ").trim();
+  const lead = /^(the|a|an|is|are|was|were|be|my|your|his|her|their|our|its|of|to|and|in|o|for|with|by|on|from|this|that)\s+/;
+  while (lead.test(t)) t = t.replace(lead, "");
+  t = t.replace(/\s+(of|to|in|for|with|from|on)$/, "");
+  return t;
+};
+
+for (const f of files) {
+  const heb = f.startsWith("TAHOT");
+  for (const line of fs.readFileSync(path.join(src, f), "utf8").split("\n")) {
+    const m = line.match(lineRe);
+    if (!m) continue;
+    const [, code, ch, vs, type] = m;
+    if (!codes.includes(code)) codes.push(code);
+    const c = line.split("\t");
+    let tag, gloss;
+    if (heb) {
+      if (!/^[LQ]/.test(type)) continue;
+      const parts = c[4].split("/");
+      const i = parts.findIndex(p => p.includes("{"));
+      if (i < 0) continue;
+      tag = parts[i].replace(/.*\{|\}.*/g, "");
+      gloss = (c[3].split("/")[i] || "").split("\\")[0];
+    } else {
+      if (!type.includes("N")) continue;
+      tag = (c[3] || "").split("=")[0];
+      gloss = c[2] || "";
+    }
+    const ids = match(tag);
+    if (!ids.length) continue;
+    for (const id of ids) {
+      ((refs[id] = refs[id] || {})[code] = refs[id][code] || new Set()).add(ch + ":" + vs);
+      (occ[id] = occ[id] || {})[code] = (occ[id][code] || 0) + 1;
+      const g = clean(gloss);
+      if (g) (glosses[id] = glosses[id] || {})[g] = (glosses[id][g] || 0) + 1;
+    }
+  }
+}
+
+if (codes.length !== 66) { console.error("Expected 66 book codes, found " + codes.length + ": " + codes.join(" ")); process.exit(1); }
+const bookOf = Object.fromEntries(codes.map((c, i) => [c, BIBLE.books[i].id]));
+
+const stats = {};
+const outDir = path.join(root, "data", "word-refs");
+fs.mkdirSync(outDir, { recursive: true });
+const verseSort = (a, b) => { const [ca, va] = a.split(":").map(Number), [cb, vb] = b.split(":").map(Number); return ca - cb || va - vb; };
+
+for (const w of Object.values(BIBLE.words)) {
+  const r = refs[w.id] || {};
+  const byBook = {}, list = {};
+  let total = 0, verses = 0;
+  for (const code of codes) {
+    if (!r[code]) continue;
+    const vs = [...r[code]].sort(verseSort);
+    byBook[bookOf[code]] = occ[w.id][code];   // occurrences in this book
+    list[bookOf[code]] = vs.join(",");
+    total += occ[w.id][code];
+    verses += vs.length;
+  }
+  const g = Object.entries(glosses[w.id] || {}).sort((a, b) => b[1] - a[1]).slice(0, 8);
+  stats[w.id] = { total, verses, byBook, glosses: g };
+  fs.writeFileSync(path.join(outDir, w.id + ".js"),
+    "/* Generated by tools/build-words.js from STEPBible data (CC BY 4.0). Do not edit. */\nBIBLE.wordRefs[" + JSON.stringify(w.id) + "] = " + JSON.stringify(list) + ";\n");
+  console.log(w.id.padEnd(12), String(total).padStart(5), "times in", verses, "verses");
+}
+
+fs.writeFileSync(path.join(root, "data", "word-stats.js"),
+  "/* Generated by tools/build-words.js from STEPBible data (CC BY 4.0, STEPBible.org). Do not edit.\n" +
+  "   total and byBook count occurrences, verses counts verses containing the word; glosses are STEPBible's contextual English glosses. */\n" +
+  "BIBLE.wordStats = " + JSON.stringify(stats) + ";\n");
+console.log("Wrote data/word-stats.js and " + Object.keys(stats).length + " files in data/word-refs/");
